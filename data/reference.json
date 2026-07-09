@@ -1,0 +1,4561 @@
+{
+ "meta": {
+  "generated_from": "company_descriptions_asx300 + company_descriptions_msciacwi",
+  "total_stocks": 2166,
+  "index_codes": [
+   "ASX300",
+   "MSCIACWI"
+  ],
+  "counts": {
+   "sectors": 11,
+   "industries": 24,
+   "countries": 36,
+   "exchanges": 43
+  }
+ },
+ "sectors": [
+  {
+   "key": "energy",
+   "name": "Energy",
+   "num": "10",
+   "code": "ENRS"
+  },
+  {
+   "key": "materials",
+   "name": "Materials",
+   "num": "15",
+   "code": "MATR"
+  },
+  {
+   "key": "industrials",
+   "name": "Industrials",
+   "num": "20",
+   "code": "INDU"
+  },
+  {
+   "key": "consumer_discretionary",
+   "name": "Consumer Discretionary",
+   "num": "25",
+   "code": "COND"
+  },
+  {
+   "key": "consumer_staples",
+   "name": "Consumer Staples",
+   "num": "30",
+   "code": "CONS"
+  },
+  {
+   "key": "health_care",
+   "name": "Health Care",
+   "num": "35",
+   "code": "HLTH"
+  },
+  {
+   "key": "financials",
+   "name": "Financials",
+   "num": "40",
+   "code": "FINL"
+  },
+  {
+   "key": "information_technology",
+   "name": "Information Technology",
+   "num": "45",
+   "code": "INFT"
+  },
+  {
+   "key": "communication_services",
+   "name": "Communication Services",
+   "num": "50",
+   "code": "TELS"
+  },
+  {
+   "key": "utilities",
+   "name": "Utilities",
+   "num": "55",
+   "code": "UTIL"
+  },
+  {
+   "key": "real_estate",
+   "name": "Real Estate",
+   "num": "60",
+   "code": "REAL"
+  }
+ ],
+ "industries": [
+  {
+   "key": "materials",
+   "name": "Materials",
+   "sector": "materials"
+  },
+  {
+   "key": "banks",
+   "name": "Banks",
+   "sector": "financials"
+  },
+  {
+   "key": "cd_retail",
+   "name": "Cd Retail",
+   "sector": "consumer_discretionary"
+  },
+  {
+   "key": "financial_services",
+   "name": "Financial Services",
+   "sector": "financials"
+  },
+  {
+   "key": "real_estate",
+   "name": "Real Estate",
+   "sector": "real_estate"
+  },
+  {
+   "key": "pharma_biotech_life",
+   "name": "Pharma Biotech Life",
+   "sector": "health_care"
+  },
+  {
+   "key": "telecom",
+   "name": "Telecom",
+   "sector": "communication_services"
+  },
+  {
+   "key": "energy",
+   "name": "Energy",
+   "sector": "energy"
+  },
+  {
+   "key": "cs_retail",
+   "name": "Cs Retail",
+   "sector": "consumer_staples"
+  },
+  {
+   "key": "transport",
+   "name": "Transport",
+   "sector": "industrials"
+  },
+  {
+   "key": "consumer_services",
+   "name": "Consumer Services",
+   "sector": "consumer_discretionary"
+  },
+  {
+   "key": "insurance",
+   "name": "Insurance",
+   "sector": "financials"
+  },
+  {
+   "key": "prof_services",
+   "name": "Prof Services",
+   "sector": "industrials"
+  },
+  {
+   "key": "utilities",
+   "name": "Utilities",
+   "sector": "utilities"
+  },
+  {
+   "key": "hc_equip_services",
+   "name": "Hc Equip Services",
+   "sector": "health_care"
+  },
+  {
+   "key": "software_services",
+   "name": "Software Services",
+   "sector": "information_technology"
+  },
+  {
+   "key": "media_ent",
+   "name": "Media Ent",
+   "sector": "communication_services"
+  },
+  {
+   "key": "capital_goods",
+   "name": "Capital Goods",
+   "sector": "industrials"
+  },
+  {
+   "key": "tech_hw",
+   "name": "Tech Hw",
+   "sector": "information_technology"
+  },
+  {
+   "key": "food_bev_tobacco",
+   "name": "Food Bev Tobacco",
+   "sector": "consumer_staples"
+  },
+  {
+   "key": "durables_apparel",
+   "name": "Durables Apparel",
+   "sector": "consumer_discretionary"
+  },
+  {
+   "key": "semis",
+   "name": "Semis",
+   "sector": "information_technology"
+  },
+  {
+   "key": "autos_components",
+   "name": "Autos Components",
+   "sector": "consumer_discretionary"
+  },
+  {
+   "key": "household_personal",
+   "name": "Household Personal",
+   "sector": "consumer_staples"
+  }
+ ],
+ "countries": [
+  {
+   "iso2": "AU",
+   "name": "Australia",
+   "flag": "🇦🇺",
+   "region": "AP",
+   "region_name": "Asia-Pacific",
+   "currency": "Australian Dollar",
+   "currency_iso": "AUD"
+  },
+  {
+   "iso2": "AT",
+   "name": "Austria",
+   "flag": "🇦🇹",
+   "region": "EU",
+   "region_name": "Europe",
+   "currency": "Euro",
+   "currency_iso": "EUR"
+  },
+  {
+   "iso2": "BE",
+   "name": "Belgium",
+   "flag": "🇧🇪",
+   "region": "EU",
+   "region_name": "Europe",
+   "currency": "Euro",
+   "currency_iso": "EUR"
+  },
+  {
+   "iso2": "BR",
+   "name": "Brazil",
+   "flag": "🇧🇷",
+   "region": "EE",
+   "region_name": "Emerging (ex-Asia)",
+   "currency": "Brazilian Real",
+   "currency_iso": "BRL"
+  },
+  {
+   "iso2": "CA",
+   "name": "Canada",
+   "flag": "🇨🇦",
+   "region": "",
+   "region_name": "",
+   "currency": "Canadian Dollar",
+   "currency_iso": "CAD"
+  },
+  {
+   "iso2": "CN",
+   "name": "China",
+   "flag": "🇨🇳",
+   "region": "AP",
+   "region_name": "Asia-Pacific",
+   "currency": "Chinese Yuan (Renminbi)",
+   "currency_iso": "CNY"
+  },
+  {
+   "iso2": "DK",
+   "name": "Denmark",
+   "flag": "🇩🇰",
+   "region": "EU",
+   "region_name": "Europe",
+   "currency": "Danish Krone",
+   "currency_iso": "DKK"
+  },
+  {
+   "iso2": "FI",
+   "name": "Finland",
+   "flag": "🇫🇮",
+   "region": "EU",
+   "region_name": "Europe",
+   "currency": "Euro",
+   "currency_iso": "EUR"
+  },
+  {
+   "iso2": "FR",
+   "name": "France",
+   "flag": "🇫🇷",
+   "region": "EU",
+   "region_name": "Europe",
+   "currency": "Euro",
+   "currency_iso": "EUR"
+  },
+  {
+   "iso2": "DE",
+   "name": "Germany",
+   "flag": "🇩🇪",
+   "region": "EU",
+   "region_name": "Europe",
+   "currency": "Euro",
+   "currency_iso": "EUR"
+  },
+  {
+   "iso2": "HK",
+   "name": "Hong Kong",
+   "flag": "🇭🇰",
+   "region": "AP",
+   "region_name": "Asia-Pacific",
+   "currency": "Hong Kong Dollar",
+   "currency_iso": "HKD"
+  },
+  {
+   "iso2": "IN",
+   "name": "India",
+   "flag": "🇮🇳",
+   "region": "AP",
+   "region_name": "Asia-Pacific",
+   "currency": "Indian Rupee",
+   "currency_iso": "INR"
+  },
+  {
+   "iso2": "ID",
+   "name": "Indonesia",
+   "flag": "🇮🇩",
+   "region": "AP",
+   "region_name": "Asia-Pacific",
+   "currency": "Indonesian Rupiah",
+   "currency_iso": "IDR"
+  },
+  {
+   "iso2": "IE",
+   "name": "Ireland",
+   "flag": "🇮🇪",
+   "region": "EU",
+   "region_name": "Europe",
+   "currency": "Euro",
+   "currency_iso": "EUR"
+  },
+  {
+   "iso2": "IL",
+   "name": "Israel",
+   "flag": "🇮🇱",
+   "region": "EE",
+   "region_name": "Emerging (ex-Asia)",
+   "currency": "Israeli New Shekel",
+   "currency_iso": "ILS"
+  },
+  {
+   "iso2": "IT",
+   "name": "Italy",
+   "flag": "🇮🇹",
+   "region": "EU",
+   "region_name": "Europe",
+   "currency": "Euro",
+   "currency_iso": "EUR"
+  },
+  {
+   "iso2": "JP",
+   "name": "Japan",
+   "flag": "🇯🇵",
+   "region": "JP",
+   "region_name": "Japan",
+   "currency": "Japanese Yen",
+   "currency_iso": "JPY"
+  },
+  {
+   "iso2": "MY",
+   "name": "Malaysia",
+   "flag": "🇲🇾",
+   "region": "AP",
+   "region_name": "Asia-Pacific",
+   "currency": "Malaysian Ringgit",
+   "currency_iso": "MYR"
+  },
+  {
+   "iso2": "MX",
+   "name": "Mexico",
+   "flag": "🇲🇽",
+   "region": "EE",
+   "region_name": "Emerging (ex-Asia)",
+   "currency": "Mexican Peso",
+   "currency_iso": "MXN"
+  },
+  {
+   "iso2": "NL",
+   "name": "Netherlands",
+   "flag": "🇳🇱",
+   "region": "EU",
+   "region_name": "Europe",
+   "currency": "Euro",
+   "currency_iso": "EUR"
+  },
+  {
+   "iso2": "NZ",
+   "name": "New Zealand",
+   "flag": "🇳🇿",
+   "region": "AP",
+   "region_name": "Asia-Pacific",
+   "currency": "New Zealand Dollar",
+   "currency_iso": "NZD"
+  },
+  {
+   "iso2": "NO",
+   "name": "Norway",
+   "flag": "🇳🇴",
+   "region": "EU",
+   "region_name": "Europe",
+   "currency": "Norwegian Krone",
+   "currency_iso": "NOK"
+  },
+  {
+   "iso2": "PE",
+   "name": "Peru",
+   "flag": "🇵🇪",
+   "region": "EE",
+   "region_name": "Emerging (ex-Asia)",
+   "currency": "Peruvian Sol",
+   "currency_iso": "PEN"
+  },
+  {
+   "iso2": "PH",
+   "name": "Philippines",
+   "flag": "🇵🇭",
+   "region": "AP",
+   "region_name": "Asia-Pacific",
+   "currency": "Philippine Peso",
+   "currency_iso": "PHP"
+  },
+  {
+   "iso2": "PT",
+   "name": "Portugal",
+   "flag": "🇵🇹",
+   "region": "EU",
+   "region_name": "Europe",
+   "currency": "Euro",
+   "currency_iso": "EUR"
+  },
+  {
+   "iso2": "SA",
+   "name": "Saudi Arabia",
+   "flag": "🇸🇦",
+   "region": "EE",
+   "region_name": "Emerging (ex-Asia)",
+   "currency": "Saudi Riyal",
+   "currency_iso": "SAR"
+  },
+  {
+   "iso2": "SG",
+   "name": "Singapore",
+   "flag": "🇸🇬",
+   "region": "AP",
+   "region_name": "Asia-Pacific",
+   "currency": "Singapore Dollar",
+   "currency_iso": "SGD"
+  },
+  {
+   "iso2": "ZA",
+   "name": "South Africa",
+   "flag": "🇿🇦",
+   "region": "EE",
+   "region_name": "Emerging (ex-Asia)",
+   "currency": "South African Rand",
+   "currency_iso": "ZAR"
+  },
+  {
+   "iso2": "KR",
+   "name": "South Korea",
+   "flag": "🇰🇷",
+   "region": "AP",
+   "region_name": "Asia-Pacific",
+   "currency": "South Korean Won",
+   "currency_iso": "KRW"
+  },
+  {
+   "iso2": "ES",
+   "name": "Spain",
+   "flag": "🇪🇸",
+   "region": "EU",
+   "region_name": "Europe",
+   "currency": "Euro",
+   "currency_iso": "EUR"
+  },
+  {
+   "iso2": "SE",
+   "name": "Sweden",
+   "flag": "🇸🇪",
+   "region": "EU",
+   "region_name": "Europe",
+   "currency": "Swedish Krona",
+   "currency_iso": "SEK"
+  },
+  {
+   "iso2": "CH",
+   "name": "Switzerland",
+   "flag": "🇨🇭",
+   "region": "EU",
+   "region_name": "Europe",
+   "currency": "Swiss Franc",
+   "currency_iso": "CHF"
+  },
+  {
+   "iso2": "TW",
+   "name": "Taiwan",
+   "flag": "🇹🇼",
+   "region": "AP",
+   "region_name": "Asia-Pacific",
+   "currency": "New Taiwan Dollar",
+   "currency_iso": "TWD"
+  },
+  {
+   "iso2": "TH",
+   "name": "Thailand",
+   "flag": "🇹🇭",
+   "region": "AP",
+   "region_name": "Asia-Pacific",
+   "currency": "Thai Baht",
+   "currency_iso": "THB"
+  },
+  {
+   "iso2": "GB",
+   "name": "United Kingdom",
+   "flag": "🇬🇧",
+   "region": "EU",
+   "region_name": "Europe",
+   "currency": "British Pound Sterling",
+   "currency_iso": "GBP"
+  },
+  {
+   "iso2": "US",
+   "name": "United States",
+   "flag": "🇺🇸",
+   "region": "US",
+   "region_name": "United States",
+   "currency": "US Dollar",
+   "currency_iso": "USD"
+  }
+ ],
+ "regions": [
+  {
+   "key": "US",
+   "name": "United States"
+  },
+  {
+   "key": "JP",
+   "name": "Japan"
+  },
+  {
+   "key": "EU",
+   "name": "Europe"
+  },
+  {
+   "key": "AP",
+   "name": "Asia-Pacific"
+  },
+  {
+   "key": "EE",
+   "name": "Emerging (ex-Asia)"
+  }
+ ],
+ "exchanges": [
+  "AEX",
+  "ASE",
+  "ASX",
+  "BAT",
+  "BRU",
+  "CPH",
+  "GER",
+  "HEX",
+  "HKG",
+  "ISE",
+  "JKT",
+  "JNB",
+  "KLS",
+  "KOE",
+  "KSC",
+  "LIS",
+  "LSE",
+  "MCE",
+  "MEX",
+  "MIL",
+  "NMS",
+  "NSI",
+  "NSM",
+  "NYS",
+  "NZC",
+  "OSL",
+  "PAR",
+  "PHS",
+  "SAO",
+  "SAU",
+  "SES",
+  "SET",
+  "SHH",
+  "SHZ",
+  "STO",
+  "SWX",
+  "TAI",
+  "TLV",
+  "TOR",
+  "TWO",
+  "TYO",
+  "VIE",
+  "VTX"
+ ],
+ "indices": [
+  {
+   "name": "All Ords",
+   "aware_id": "XAO",
+   "asx_index_code": "XAO",
+   "bbg_code": "AS30"
+  },
+  {
+   "name": "S&P/ASX 50",
+   "aware_id": "XFL",
+   "asx_index_code": "XFL",
+   "bbg_code": "AS31"
+  },
+  {
+   "name": "S&P/ASX 200",
+   "aware_id": "XJO",
+   "asx_index_code": "XJO",
+   "bbg_code": "AS51"
+  },
+  {
+   "name": "S&P/ASX 300 Industrials",
+   "aware_id": "XKID",
+   "asx_index_code": "XKID",
+   "bbg_code": "AS47"
+  },
+  {
+   "name": "S&P/ASX 300 Industrials exTop20",
+   "aware_id": "XKIDx20",
+   "asx_index_code": "None",
+   "bbg_code": "None"
+  },
+  {
+   "name": "S&P/ASX 300",
+   "aware_id": "XKO",
+   "asx_index_code": "XKO",
+   "bbg_code": "AS52"
+  },
+  {
+   "name": "S&P/ASX 300 Resources",
+   "aware_id": "XKRD",
+   "asx_index_code": "XKRD",
+   "bbg_code": "AS48"
+  },
+  {
+   "name": "S&P/ASX MidCap 50",
+   "aware_id": "XMD",
+   "asx_index_code": "XMD",
+   "bbg_code": "AS34"
+  },
+  {
+   "name": "S&P/ASX Mid Small Index",
+   "aware_id": "XMST",
+   "asx_index_code": "XMST",
+   "bbg_code": "SPAXMS"
+  },
+  {
+   "name": "S&P/ASX 200 Industrials",
+   "aware_id": "XNJ",
+   "asx_index_code": "XNJ",
+   "bbg_code": "AS44"
+  },
+  {
+   "name": "S&P/ASX 200 Industrials exTop20",
+   "aware_id": "XNJx20",
+   "asx_index_code": "None",
+   "bbg_code": "None"
+  },
+  {
+   "name": "S&P/ASX Small Ords",
+   "aware_id": "XSO",
+   "asx_index_code": "XSO",
+   "bbg_code": "AS38"
+  },
+  {
+   "name": "S&P/ASX 100 Industrials",
+   "aware_id": "XTID",
+   "asx_index_code": "XTID",
+   "bbg_code": "AS44"
+  },
+  {
+   "name": "S&P/ASX 20",
+   "aware_id": "XTL",
+   "asx_index_code": "XTL",
+   "bbg_code": "AS26"
+  },
+  {
+   "name": "S&P/ASX 100",
+   "aware_id": "XTO",
+   "asx_index_code": "XTO",
+   "bbg_code": "AS25"
+  },
+  {
+   "name": "MSCI EM",
+   "aware_id": "891800",
+   "asx_index_code": "None",
+   "bbg_code": "None"
+  },
+  {
+   "name": "MSCI ACWI",
+   "aware_id": "892400",
+   "asx_index_code": "None",
+   "bbg_code": "None"
+  },
+  {
+   "name": "MSCI World",
+   "aware_id": "990100",
+   "asx_index_code": "None",
+   "bbg_code": "None"
+  },
+  {
+   "name": "MSCI World exAU",
+   "aware_id": "996200",
+   "asx_index_code": "None",
+   "bbg_code": "None"
+  }
+ ],
+ "quickview": {
+  "top_global": [
+   {
+    "qaid": "NVDA",
+    "ticker": "NVDA UW Equity",
+    "name": "NVIDIA Corp",
+    "iso2": "US",
+    "country": "United States",
+    "region": "US",
+    "gsector": "information_technology",
+    "gindustry": "semis",
+    "exchange": "NSM",
+    "cap": 6793285.0
+   },
+   {
+    "qaid": "AAPL",
+    "ticker": "AAPL UW Equity",
+    "name": "Apple Inc",
+    "iso2": "US",
+    "country": "United States",
+    "region": "US",
+    "gsector": "information_technology",
+    "gindustry": "tech_hw",
+    "exchange": "NSM",
+    "cap": 6531159.0
+   },
+   {
+    "qaid": "MSFT",
+    "ticker": "MSFT UW Equity",
+    "name": "Microsoft Corp",
+    "iso2": "US",
+    "country": "United States",
+    "region": "US",
+    "gsector": "information_technology",
+    "gindustry": "software_services",
+    "exchange": "NSM",
+    "cap": 4179419.0
+   },
+   {
+    "qaid": "AMZN",
+    "ticker": "AMZN UW Equity",
+    "name": "Amazon.com Inc",
+    "iso2": "US",
+    "country": "United States",
+    "region": "US",
+    "gsector": "consumer_discretionary",
+    "gindustry": "cd_retail",
+    "exchange": "NSM",
+    "cap": 3761147.0
+   },
+   {
+    "qaid": "GOOG",
+    "ticker": "GOOGL UW Equity",
+    "name": "Alphabet Inc",
+    "iso2": "US",
+    "country": "United States",
+    "region": "US",
+    "gsector": "communication_services",
+    "gindustry": "media_ent",
+    "exchange": "NSM",
+    "cap": 3035300.0
+   },
+   {
+    "qaid": "@TAIWA91",
+    "ticker": "2330 TT Equity",
+    "name": "Taiwan Semiconductor Manufacturing Co Ltd",
+    "iso2": "TW",
+    "country": "Taiwan",
+    "region": "AP",
+    "gsector": "information_technology",
+    "gindustry": "semis",
+    "exchange": "TAI",
+    "cap": 2860101.0
+   },
+   {
+    "qaid": "38259P70",
+    "ticker": "GOOG UW Equity",
+    "name": "Alphabet Inc",
+    "iso2": "US",
+    "country": "United States",
+    "region": "US",
+    "gsector": "communication_services",
+    "gindustry": "media_ent",
+    "exchange": "NSM",
+    "cap": 2814989.0
+   },
+   {
+    "qaid": "Y0486S10",
+    "ticker": "AVGO UW Equity",
+    "name": "Broadcom Inc",
+    "iso2": "US",
+    "country": "United States",
+    "region": "US",
+    "gsector": "information_technology",
+    "gindustry": "semis",
+    "exchange": "NSM",
+    "cap": 2470813.0
+   },
+   {
+    "qaid": "@SAUDI110",
+    "ticker": "ARAMCO AB Equity",
+    "name": "Saudi Arabian Oil Co",
+    "iso2": "SA",
+    "country": "Saudi Arabia",
+    "region": "EE",
+    "gsector": "energy",
+    "gindustry": "energy",
+    "exchange": "SAU",
+    "cap": 2423837.0
+   },
+   {
+    "qaid": "88160R10",
+    "ticker": "TSLA UW Equity",
+    "name": "Tesla Inc",
+    "iso2": "US",
+    "country": "United States",
+    "region": "US",
+    "gsector": "consumer_discretionary",
+    "gindustry": "autos_components",
+    "exchange": "NSM",
+    "cap": 2129079.0
+   },
+   {
+    "qaid": "30303M10",
+    "ticker": "META UW Equity",
+    "name": "Meta Platforms Inc",
+    "iso2": "US",
+    "country": "United States",
+    "region": "US",
+    "gsector": "communication_services",
+    "gindustry": "media_ent",
+    "exchange": "NSM",
+    "cap": 1844353.0
+   },
+   {
+    "qaid": "84615Q10",
+    "ticker": "SPCX UW Equity",
+    "name": "Space Exploration Technologies Corp",
+    "iso2": "US",
+    "country": "United States",
+    "region": "US",
+    "gsector": "communication_services",
+    "gindustry": "telecom",
+    "exchange": "NSM",
+    "cap": 1742079.0
+   },
+   {
+    "qaid": "@SAMSU48",
+    "ticker": "005930 KP Equity",
+    "name": "Samsung Electronics Co Ltd",
+    "iso2": "KR",
+    "country": "South Korea",
+    "region": "AP",
+    "gsector": "information_technology",
+    "gindustry": "tech_hw",
+    "exchange": "KSC",
+    "cap": 1704734.0
+   },
+   {
+    "qaid": "LLY",
+    "ticker": "LLY UN Equity",
+    "name": "Eli Lilly and Co",
+    "iso2": "US",
+    "country": "United States",
+    "region": "US",
+    "gsector": "health_care",
+    "gindustry": "pharma_biotech_life",
+    "exchange": "NYS",
+    "cap": 1647126.0
+   },
+   {
+    "qaid": "@HYNIX1",
+    "ticker": "000660 KP Equity",
+    "name": "SK Hynix Inc",
+    "iso2": "KR",
+    "country": "South Korea",
+    "region": "AP",
+    "gsector": "information_technology",
+    "gindustry": "semis",
+    "exchange": "KSC",
+    "cap": 1628308.0
+   },
+   {
+    "qaid": "MU",
+    "ticker": "MU UW Equity",
+    "name": "Micron Technology Inc",
+    "iso2": "US",
+    "country": "United States",
+    "region": "US",
+    "gsector": "information_technology",
+    "gindustry": "semis",
+    "exchange": "NSM",
+    "cap": 1587478.0
+   },
+   {
+    "qaid": "@TENCE1",
+    "ticker": "700 HK Equity",
+    "name": "Tencent Holdings Ltd",
+    "iso2": "CN",
+    "country": "China",
+    "region": "AP",
+    "gsector": "communication_services",
+    "gindustry": "media_ent",
+    "exchange": "HKG",
+    "cap": 1440457.0
+   },
+   {
+    "qaid": "CMB",
+    "ticker": "JPM UN Equity",
+    "name": "JPMorgan Chase & Co",
+    "iso2": "US",
+    "country": "United States",
+    "region": "US",
+    "gsector": "financials",
+    "gindustry": "banks",
+    "exchange": "NYS",
+    "cap": 1291283.0
+   },
+   {
+    "qaid": "WMT",
+    "ticker": "WMT UW Equity",
+    "name": "Walmart Inc",
+    "iso2": "US",
+    "country": "United States",
+    "region": "US",
+    "gsector": "consumer_staples",
+    "gindustry": "cs_retail",
+    "exchange": "NSM",
+    "cap": 1282372.0
+   },
+   {
+    "qaid": "AMD",
+    "ticker": "AMD UW Equity",
+    "name": "Advanced Micro Devices Inc",
+    "iso2": "US",
+    "country": "United States",
+    "region": "US",
+    "gsector": "information_technology",
+    "gindustry": "semis",
+    "exchange": "NSM",
+    "cap": 1216565.0
+   },
+   {
+    "qaid": "@ASMLH1",
+    "ticker": "ASML NA Equity",
+    "name": "ASML Holding NV",
+    "iso2": "NL",
+    "country": "Netherlands",
+    "region": "EU",
+    "gsector": "information_technology",
+    "gindustry": "semis",
+    "exchange": "AEX",
+    "cap": 1045370.0
+   },
+   {
+    "qaid": "BRK.B",
+    "ticker": "BRK/B UN Equity",
+    "name": "Berkshire Hathaway Inc",
+    "iso2": "US",
+    "country": "United States",
+    "region": "US",
+    "gsector": "financials",
+    "gindustry": "financial_services",
+    "exchange": "NYS",
+    "cap": 1023027.0
+   },
+   {
+    "qaid": "JNJ",
+    "ticker": "JNJ UN Equity",
+    "name": "Johnson & Johnson",
+    "iso2": "US",
+    "country": "United States",
+    "region": "US",
+    "gsector": "health_care",
+    "gindustry": "pharma_biotech_life",
+    "exchange": "NYS",
+    "cap": 912317.0
+   },
+   {
+    "qaid": "INTC",
+    "ticker": "INTC UW Equity",
+    "name": "Intel Corp",
+    "iso2": "US",
+    "country": "United States",
+    "region": "US",
+    "gsector": "information_technology",
+    "gindustry": "semis",
+    "exchange": "NSM",
+    "cap": 871520.0
+   },
+   {
+    "qaid": "92826C83",
+    "ticker": "V UN Equity",
+    "name": "Visa Inc",
+    "iso2": "US",
+    "country": "United States",
+    "region": "US",
+    "gsector": "financials",
+    "gindustry": "financial_services",
+    "exchange": "NYS",
+    "cap": 865975.0
+   }
+  ],
+  "top_by_sector": {
+   "utilities": [
+    {
+     "qaid": "FPL",
+     "ticker": "NEE UN Equity",
+     "name": "Nextera Energy Inc",
+     "iso2": "US",
+     "country": "United States",
+     "region": "US",
+     "gsector": "utilities",
+     "gindustry": "utilities",
+     "exchange": "NYS",
+     "cap": 265459.0
+    },
+    {
+     "qaid": "@IBERD2",
+     "ticker": "IBE SQ Equity",
+     "name": "Iberdrola SA",
+     "iso2": "ES",
+     "country": "Spain",
+     "region": "EU",
+     "gsector": "utilities",
+     "gindustry": "utilities",
+     "exchange": "MCE",
+     "cap": 242316.0
+    },
+    {
+     "qaid": "@ENELE1",
+     "ticker": "ENEL IM Equity",
+     "name": "Enel SpA",
+     "iso2": "IT",
+     "country": "Italy",
+     "region": "EU",
+     "gsector": "utilities",
+     "gindustry": "utilities",
+     "exchange": "MIL",
+     "cap": 171886.0
+    },
+    {
+     "qaid": "SO",
+     "ticker": "SO UN Equity",
+     "name": "Southern Co",
+     "iso2": "US",
+     "country": "United States",
+     "region": "US",
+     "gsector": "utilities",
+     "gindustry": "utilities",
+     "exchange": "NYS",
+     "cap": 159142.0
+    },
+    {
+     "qaid": "DUK",
+     "ticker": "DUK UN Equity",
+     "name": "Duke Energy Corp",
+     "iso2": "US",
+     "country": "United States",
+     "region": "US",
+     "gsector": "utilities",
+     "gindustry": "utilities",
+     "exchange": "NYS",
+     "cap": 145574.0
+    },
+    {
+     "qaid": "CEGVV",
+     "ticker": "CEG UW Equity",
+     "name": "Constellation Energy Corp",
+     "iso2": "US",
+     "country": "United States",
+     "region": "US",
+     "gsector": "utilities",
+     "gindustry": "utilities",
+     "exchange": "NSM",
+     "cap": 123788.0
+    },
+    {
+     "qaid": "@NATIO1",
+     "ticker": "NG/ LN Equity",
+     "name": "National Grid PLC",
+     "iso2": "GB",
+     "country": "United Kingdom",
+     "region": "EU",
+     "gsector": "utilities",
+     "gindustry": "utilities",
+     "exchange": "LSE",
+     "cap": 119082.0
+    },
+    {
+     "qaid": "@GAZDE3",
+     "ticker": "ENGI FP Equity",
+     "name": "Engie SA",
+     "iso2": "FR",
+     "country": "France",
+     "region": "EU",
+     "gsector": "utilities",
+     "gindustry": "utilities",
+     "exchange": "PAR",
+     "cap": 116175.0
+    },
+    {
+     "qaid": "AEP",
+     "ticker": "AEP UW Equity",
+     "name": "American Electric Power Company Inc",
+     "iso2": "US",
+     "country": "United States",
+     "region": "US",
+     "gsector": "utilities",
+     "gindustry": "utilities",
+     "exchange": "NSM",
+     "cap": 113284.0
+    },
+    {
+     "qaid": "D",
+     "ticker": "D UN Equity",
+     "name": "Dominion Energy Inc",
+     "iso2": "US",
+     "country": "United States",
+     "region": "US",
+     "gsector": "utilities",
+     "gindustry": "utilities",
+     "exchange": "NYS",
+     "cap": 88388.0
+    }
+   ],
+   "industrials": [
+    {
+     "qaid": "CAT",
+     "ticker": "CAT UN Equity",
+     "name": "Caterpillar Inc",
+     "iso2": "US",
+     "country": "United States",
+     "region": "US",
+     "gsector": "industrials",
+     "gindustry": "capital_goods",
+     "exchange": "NYS",
+     "cap": 639426.0
+    },
+    {
+     "qaid": "GE",
+     "ticker": "GE UN Equity",
+     "name": "General Electric Co",
+     "iso2": "US",
+     "country": "United States",
+     "region": "US",
+     "gsector": "industrials",
+     "gindustry": "capital_goods",
+     "exchange": "NYS",
+     "cap": 567510.0
+    },
+    {
+     "qaid": "GEVWI",
+     "ticker": "GEV UN Equity",
+     "name": "GE Vernova Inc",
+     "iso2": "US",
+     "country": "United States",
+     "region": "US",
+     "gsector": "industrials",
+     "gindustry": "capital_goods",
+     "exchange": "NYS",
+     "cap": 430970.0
+    },
+    {
+     "qaid": "UTX",
+     "ticker": "RTX UN Equity",
+     "name": "RTX Corp",
+     "iso2": "US",
+     "country": "United States",
+     "region": "US",
+     "gsector": "industrials",
+     "gindustry": "capital_goods",
+     "exchange": "NYS",
+     "cap": 386609.0
+    },
+    {
+     "qaid": "@SIEME18",
+     "ticker": "SIE GY Equity",
+     "name": "Siemens AG",
+     "iso2": "DE",
+     "country": "Germany",
+     "region": "EU",
+     "gsector": "industrials",
+     "gindustry": "capital_goods",
+     "exchange": "GER",
+     "cap": 366094.0
+    },
+    {
+     "qaid": "@BBCBR3",
+     "ticker": "ABBN SE Equity",
+     "name": "Abb Ltd",
+     "iso2": "CH",
+     "country": "Switzerland",
+     "region": "EU",
+     "gsector": "industrials",
+     "gindustry": "capital_goods",
+     "exchange": "VTX",
+     "cap": 285712.0
+    },
+    {
+     "qaid": "@EADSE1",
+     "ticker": "AIR FP Equity",
+     "name": "Airbus SE",
+     "iso2": "FR",
+     "country": "France",
+     "region": "EU",
+     "gsector": "industrials",
+     "gindustry": "capital_goods",
+     "exchange": "PAR",
+     "cap": 269140.0
+    },
+    {
+     "qaid": "@SCHNE7",
+     "ticker": "SU FP Equity",
+     "name": "Schneider Electric SE",
+     "iso2": "FR",
+     "country": "France",
+     "region": "EU",
+     "gsector": "industrials",
+     "gindustry": "capital_goods",
+     "exchange": "PAR",
+     "cap": 266376.0
+    },
+    {
+     "qaid": "BA",
+     "ticker": "BA UN Equity",
+     "name": "Boeing Co",
+     "iso2": "US",
+     "country": "United States",
+     "region": "US",
+     "gsector": "industrials",
+     "gindustry": "capital_goods",
+     "exchange": "NYS",
+     "cap": 257247.0
+    },
+    {
+     "qaid": "@SATSA1",
+     "ticker": "SAF FP Equity",
+     "name": "Safran SA",
+     "iso2": "FR",
+     "country": "France",
+     "region": "EU",
+     "gsector": "industrials",
+     "gindustry": "capital_goods",
+     "exchange": "PAR",
+     "cap": 245896.0
+    }
+   ],
+   "health_care": [
+    {
+     "qaid": "LLY",
+     "ticker": "LLY UN Equity",
+     "name": "Eli Lilly and Co",
+     "iso2": "US",
+     "country": "United States",
+     "region": "US",
+     "gsector": "health_care",
+     "gindustry": "pharma_biotech_life",
+     "exchange": "NYS",
+     "cap": 1647126.0
+    },
+    {
+     "qaid": "JNJ",
+     "ticker": "JNJ UN Equity",
+     "name": "Johnson & Johnson",
+     "iso2": "US",
+     "country": "United States",
+     "region": "US",
+     "gsector": "health_care",
+     "gindustry": "pharma_biotech_life",
+     "exchange": "NYS",
+     "cap": 912317.0
+    },
+    {
+     "qaid": "00287Y10",
+     "ticker": "ABBV UN Equity",
+     "name": "Abbvie Inc",
+     "iso2": "US",
+     "country": "United States",
+     "region": "US",
+     "gsector": "health_care",
+     "gindustry": "pharma_biotech_life",
+     "exchange": "NYS",
+     "cap": 664586.0
+    },
+    {
+     "qaid": "UNH",
+     "ticker": "UNH UN Equity",
+     "name": "UnitedHealth Group Inc",
+     "iso2": "US",
+     "country": "United States",
+     "region": "US",
+     "gsector": "health_care",
+     "gindustry": "hc_equip_services",
+     "exchange": "NYS",
+     "cap": 556571.0
+    },
+    {
+     "qaid": "@NOVAR21",
+     "ticker": "NOVN SE Equity",
+     "name": "Novartis AG",
+     "iso2": "CH",
+     "country": "Switzerland",
+     "region": "EU",
+     "gsector": "health_care",
+     "gindustry": "pharma_biotech_life",
+     "exchange": "VTX",
+     "cap": 466829.0
+    },
+    {
+     "qaid": "MRK",
+     "ticker": "MRK UN Equity",
+     "name": "Merck & Co Inc",
+     "iso2": "US",
+     "country": "United States",
+     "region": "US",
+     "gsector": "health_care",
+     "gindustry": "pharma_biotech_life",
+     "exchange": "NYS",
+     "cap": 461047.0
+    },
+    {
+     "qaid": "@ASTRA10",
+     "ticker": "AZN LN Equity",
+     "name": "AstraZeneca PLC",
+     "iso2": "GB",
+     "country": "United Kingdom",
+     "region": "EU",
+     "gsector": "health_care",
+     "gindustry": "pharma_biotech_life",
+     "exchange": "LSE",
+     "cap": 431358.0
+    },
+    {
+     "qaid": "@ROCHE11",
+     "ticker": "ROP SE Equity",
+     "name": "Roche Holding AG",
+     "iso2": "CH",
+     "country": "Switzerland",
+     "region": "EU",
+     "gsector": "health_care",
+     "gindustry": "pharma_biotech_life",
+     "exchange": "VTX",
+     "cap": 429164.0
+    },
+    {
+     "qaid": "AMGN",
+     "ticker": "AMGN UW Equity",
+     "name": "Amgen Inc",
+     "iso2": "US",
+     "country": "United States",
+     "region": "US",
+     "gsector": "health_care",
+     "gindustry": "pharma_biotech_life",
+     "exchange": "NSM",
+     "cap": 290947.0
+    },
+    {
+     "qaid": "TMO",
+     "ticker": "TMO UN Equity",
+     "name": "Thermo Fisher Scientific Inc",
+     "iso2": "US",
+     "country": "United States",
+     "region": "US",
+     "gsector": "health_care",
+     "gindustry": "pharma_biotech_life",
+     "exchange": "NYS",
+     "cap": 280270.0
+    }
+   ],
+   "energy": [
+    {
+     "qaid": "@SAUDI110",
+     "ticker": "ARAMCO AB Equity",
+     "name": "Saudi Arabian Oil Co",
+     "iso2": "SA",
+     "country": "Saudi Arabia",
+     "region": "EE",
+     "gsector": "energy",
+     "gindustry": "energy",
+     "exchange": "SAU",
+     "cap": 2423837.0
+    },
+    {
+     "qaid": "XOM",
+     "ticker": "XOM UN Equity",
+     "name": "Exxon Mobil Corp",
+     "iso2": "US",
+     "country": "United States",
+     "region": "US",
+     "gsector": "energy",
+     "gindustry": "energy",
+     "exchange": "NYS",
+     "cap": 818716.0
+    },
+    {
+     "qaid": "CHV",
+     "ticker": "CVX UN Equity",
+     "name": "Chevron Corp",
+     "iso2": "US",
+     "country": "United States",
+     "region": "US",
+     "gsector": "energy",
+     "gindustry": "energy",
+     "exchange": "NYS",
+     "cap": 485524.0
+    },
+    {
+     "qaid": "@ROYAL3",
+     "ticker": "SHEL LN Equity",
+     "name": "Shell PLC",
+     "iso2": "GB",
+     "country": "United Kingdom",
+     "region": "EU",
+     "gsector": "energy",
+     "gindustry": "energy",
+     "exchange": "LSE",
+     "cap": 309900.0
+    },
+    {
+     "qaid": "@RELIA14",
+     "ticker": "RELIANCE IS Equity",
+     "name": "Reliance Industries Ltd",
+     "iso2": "IN",
+     "country": "India",
+     "region": "AP",
+     "gsector": "energy",
+     "gindustry": "energy",
+     "exchange": "NSI",
+     "cap": 267030.0
+    },
+    {
+     "qaid": "@TOTAL18",
+     "ticker": "TTE FP Equity",
+     "name": "TotalEnergies SE",
+     "iso2": "FR",
+     "country": "France",
+     "region": "EU",
+     "gsector": "energy",
+     "gindustry": "energy",
+     "exchange": "PAR",
+     "cap": 251681.0
+    },
+    {
+     "qaid": "P",
+     "ticker": "COP UN Equity",
+     "name": "ConocoPhillips",
+     "iso2": "US",
+     "country": "United States",
+     "region": "US",
+     "gsector": "energy",
+     "gindustry": "energy",
+     "exchange": "NYS",
+     "cap": 183837.0
+    },
+    {
+     "qaid": "ENBR",
+     "ticker": "ENB CT Equity",
+     "name": "Enbridge Inc",
+     "iso2": "CA",
+     "country": "Canada",
+     "region": "",
+     "gsector": "energy",
+     "gindustry": "energy",
+     "exchange": "TOR",
+     "cap": 169990.0
+    },
+    {
+     "qaid": "@BPORD1",
+     "ticker": "BP/ LN Equity",
+     "name": "BP PLC",
+     "iso2": "GB",
+     "country": "United Kingdom",
+     "region": "EU",
+     "gsector": "energy",
+     "gindustry": "energy",
+     "exchange": "LSE",
+     "cap": 148167.0
+    },
+    {
+     "qaid": "WMB",
+     "ticker": "WMB UN Equity",
+     "name": "Williams Companies Inc",
+     "iso2": "US",
+     "country": "United States",
+     "region": "US",
+     "gsector": "energy",
+     "gindustry": "energy",
+     "exchange": "NYS",
+     "cap": 128881.0
+    }
+   ],
+   "consumer_discretionary": [
+    {
+     "qaid": "AMZN",
+     "ticker": "AMZN UW Equity",
+     "name": "Amazon.com Inc",
+     "iso2": "US",
+     "country": "United States",
+     "region": "US",
+     "gsector": "consumer_discretionary",
+     "gindustry": "cd_retail",
+     "exchange": "NSM",
+     "cap": 3761147.0
+    },
+    {
+     "qaid": "88160R10",
+     "ticker": "TSLA UW Equity",
+     "name": "Tesla Inc",
+     "iso2": "US",
+     "country": "United States",
+     "region": "US",
+     "gsector": "consumer_discretionary",
+     "gindustry": "autos_components",
+     "exchange": "NSM",
+     "cap": 2129079.0
+    },
+    {
+     "qaid": "HD",
+     "ticker": "HD UN Equity",
+     "name": "Home Depot Inc",
+     "iso2": "US",
+     "country": "United States",
+     "region": "US",
+     "gsector": "consumer_discretionary",
+     "gindustry": "cd_retail",
+     "exchange": "NYS",
+     "cap": 514181.0
+    },
+    {
+     "qaid": "@LVMHM9",
+     "ticker": "MC FP Equity",
+     "name": "Lvmh Moet Hennessy Louis Vuitton SE",
+     "iso2": "FR",
+     "country": "France",
+     "region": "EU",
+     "gsector": "consumer_discretionary",
+     "gindustry": "durables_apparel",
+     "exchange": "PAR",
+     "cap": 404995.0
+    },
+    {
+     "qaid": "@TOYOT17",
+     "ticker": "7203 JT Equity",
+     "name": "Toyota Motor Corp",
+     "iso2": "JP",
+     "country": "Japan",
+     "region": "JP",
+     "gsector": "consumer_discretionary",
+     "gindustry": "autos_components",
+     "exchange": "TYO",
+     "cap": 368508.0
+    },
+    {
+     "qaid": "@ALIBA15",
+     "ticker": "9988 HK Equity",
+     "name": "Alibaba Group Holding Ltd",
+     "iso2": "CN",
+     "country": "China",
+     "region": "AP",
+     "gsector": "consumer_discretionary",
+     "gindustry": "cd_retail",
+     "exchange": "NYS",
+     "cap": 332013.0
+    },
+    {
+     "qaid": "@INDIT2",
+     "ticker": "ITX SQ Equity",
+     "name": "Industria de Diseno Textil SA",
+     "iso2": "ES",
+     "country": "Spain",
+     "region": "EU",
+     "gsector": "consumer_discretionary",
+     "gindustry": "cd_retail",
+     "exchange": "MCE",
+     "cap": 293764.0
+    },
+    {
+     "qaid": "MCD",
+     "ticker": "MCD UN Equity",
+     "name": "McDonald's Corp",
+     "iso2": "US",
+     "country": "United States",
+     "region": "US",
+     "gsector": "consumer_discretionary",
+     "gindustry": "consumer_services",
+     "exchange": "NYS",
+     "cap": 287283.0
+    },
+    {
+     "qaid": "@HERME8",
+     "ticker": "RMS FP Equity",
+     "name": "Hermes International SCA",
+     "iso2": "FR",
+     "country": "France",
+     "region": "EU",
+     "gsector": "consumer_discretionary",
+     "gindustry": "durables_apparel",
+     "exchange": "PAR",
+     "cap": 285469.0
+    },
+    {
+     "qaid": "TJX",
+     "ticker": "TJX UN Equity",
+     "name": "TJX Companies Inc",
+     "iso2": "US",
+     "country": "United States",
+     "region": "US",
+     "gsector": "consumer_discretionary",
+     "gindustry": "cd_retail",
+     "exchange": "NYS",
+     "cap": 245532.0
+    }
+   ],
+   "consumer_staples": [
+    {
+     "qaid": "WMT",
+     "ticker": "WMT UW Equity",
+     "name": "Walmart Inc",
+     "iso2": "US",
+     "country": "United States",
+     "region": "US",
+     "gsector": "consumer_staples",
+     "gindustry": "cs_retail",
+     "exchange": "NSM",
+     "cap": 1282372.0
+    },
+    {
+     "qaid": "COST",
+     "ticker": "COST UW Equity",
+     "name": "Costco Wholesale Corp",
+     "iso2": "US",
+     "country": "United States",
+     "region": "US",
+     "gsector": "consumer_staples",
+     "gindustry": "cs_retail",
+     "exchange": "NSM",
+     "cap": 608090.0
+    },
+    {
+     "qaid": "KO",
+     "ticker": "KO UN Equity",
+     "name": "Coca-Cola Co",
+     "iso2": "US",
+     "country": "United States",
+     "region": "US",
+     "gsector": "consumer_staples",
+     "gindustry": "food_bev_tobacco",
+     "exchange": "NYS",
+     "cap": 521591.0
+    },
+    {
+     "qaid": "PG",
+     "ticker": "PG UN Equity",
+     "name": "Procter & Gamble Co",
+     "iso2": "US",
+     "country": "United States",
+     "region": "US",
+     "gsector": "consumer_staples",
+     "gindustry": "household_personal",
+     "exchange": "NYS",
+     "cap": 507993.0
+    },
+    {
+     "qaid": "71817210",
+     "ticker": "PM UN Equity",
+     "name": "Philip Morris International Inc",
+     "iso2": "US",
+     "country": "United States",
+     "region": "US",
+     "gsector": "consumer_staples",
+     "gindustry": "food_bev_tobacco",
+     "exchange": "NYS",
+     "cap": 409305.0
+    },
+    {
+     "qaid": "@NESTL17",
+     "ticker": "NESN SE Equity",
+     "name": "Nestle SA",
+     "iso2": "CH",
+     "country": "Switzerland",
+     "region": "EU",
+     "gsector": "consumer_staples",
+     "gindustry": "food_bev_tobacco",
+     "exchange": "VTX",
+     "cap": 390697.0
+    },
+    {
+     "qaid": "@LOREA1",
+     "ticker": "OR FP Equity",
+     "name": "L'Oreal SA",
+     "iso2": "FR",
+     "country": "France",
+     "region": "EU",
+     "gsector": "consumer_staples",
+     "gindustry": "household_personal",
+     "exchange": "PAR",
+     "cap": 335518.0
+    },
+    {
+     "qaid": "PEP",
+     "ticker": "PEP UW Equity",
+     "name": "PepsiCo Inc",
+     "iso2": "US",
+     "country": "United States",
+     "region": "US",
+     "gsector": "consumer_staples",
+     "gindustry": "food_bev_tobacco",
+     "exchange": "NSM",
+     "cap": 284007.0
+    },
+    {
+     "qaid": "@INTER124",
+     "ticker": "ABI BB Equity",
+     "name": "Anheuser-Busch Inbev SA",
+     "iso2": "BE",
+     "country": "Belgium",
+     "region": "EU",
+     "gsector": "consumer_staples",
+     "gindustry": "food_bev_tobacco",
+     "exchange": "BRU",
+     "cap": 214531.0
+    },
+    {
+     "qaid": "@BRITA19",
+     "ticker": "BATS LN Equity",
+     "name": "British American Tobacco P.l.c",
+     "iso2": "GB",
+     "country": "United Kingdom",
+     "region": "EU",
+     "gsector": "consumer_staples",
+     "gindustry": "food_bev_tobacco",
+     "exchange": "LSE",
+     "cap": 192500.0
+    }
+   ],
+   "real_estate": [
+    {
+     "qaid": "42217K10",
+     "ticker": "WELL UN Equity",
+     "name": "Welltower Inc",
+     "iso2": "US",
+     "country": "United States",
+     "region": "US",
+     "gsector": "real_estate",
+     "gindustry": "real_estate",
+     "exchange": "NYS",
+     "cap": 240095.0
+    },
+    {
+     "qaid": "00163T10",
+     "ticker": "PLD UN Equity",
+     "name": "Prologis Inc",
+     "iso2": "US",
+     "country": "United States",
+     "region": "US",
+     "gsector": "real_estate",
+     "gindustry": "real_estate",
+     "exchange": "NYS",
+     "cap": 187300.0
+    },
+    {
+     "qaid": "EQIX",
+     "ticker": "EQIX UW Equity",
+     "name": "Equinix Inc",
+     "iso2": "US",
+     "country": "United States",
+     "region": "US",
+     "gsector": "real_estate",
+     "gindustry": "real_estate",
+     "exchange": "NSM",
+     "cap": 142386.0
+    },
+    {
+     "qaid": "AMT",
+     "ticker": "AMT UN Equity",
+     "name": "American Tower Corp",
+     "iso2": "US",
+     "country": "United States",
+     "region": "US",
+     "gsector": "real_estate",
+     "gindustry": "real_estate",
+     "exchange": "NYS",
+     "cap": 111450.0
+    },
+    {
+     "qaid": "82880610",
+     "ticker": "SPG UN Equity",
+     "name": "Simon Property Group Inc",
+     "iso2": "US",
+     "country": "United States",
+     "region": "US",
+     "gsector": "real_estate",
+     "gindustry": "real_estate",
+     "exchange": "NYS",
+     "cap": 105622.0
+    },
+    {
+     "qaid": "25386810",
+     "ticker": "DLR UN Equity",
+     "name": "Digital Realty Trust Inc",
+     "iso2": "US",
+     "country": "United States",
+     "region": "US",
+     "gsector": "real_estate",
+     "gindustry": "real_estate",
+     "exchange": "NYS",
+     "cap": 89307.0
+    },
+    {
+     "qaid": "75610910",
+     "ticker": "O UN Equity",
+     "name": "Realty Income Corp",
+     "iso2": "US",
+     "country": "United States",
+     "region": "US",
+     "gsector": "real_estate",
+     "gindustry": "real_estate",
+     "exchange": "NYS",
+     "cap": 85772.0
+    },
+    {
+     "qaid": "74460D10",
+     "ticker": "PSA UN Equity",
+     "name": "Public Storage",
+     "iso2": "US",
+     "country": "United States",
+     "region": "US",
+     "gsector": "real_estate",
+     "gindustry": "real_estate",
+     "exchange": "NYS",
+     "cap": 83392.0
+    },
+    {
+     "qaid": "92276F10",
+     "ticker": "VTR UN Equity",
+     "name": "Ventas Inc",
+     "iso2": "US",
+     "country": "United States",
+     "region": "US",
+     "gsector": "real_estate",
+     "gindustry": "real_estate",
+     "exchange": "NYS",
+     "cap": 64809.0
+    },
+    {
+     "qaid": "@MACQU55",
+     "ticker": "GMG AU",
+     "name": "Goodman Group",
+     "iso2": "AU",
+     "country": "Australia",
+     "region": "AP",
+     "gsector": "real_estate",
+     "gindustry": "real_estate",
+     "exchange": "ASX",
+     "cap": 62938.73
+    }
+   ],
+   "financials": [
+    {
+     "qaid": "CMB",
+     "ticker": "JPM UN Equity",
+     "name": "JPMorgan Chase & Co",
+     "iso2": "US",
+     "country": "United States",
+     "region": "US",
+     "gsector": "financials",
+     "gindustry": "banks",
+     "exchange": "NYS",
+     "cap": 1291283.0
+    },
+    {
+     "qaid": "BRK.B",
+     "ticker": "BRK/B UN Equity",
+     "name": "Berkshire Hathaway Inc",
+     "iso2": "US",
+     "country": "United States",
+     "region": "US",
+     "gsector": "financials",
+     "gindustry": "financial_services",
+     "exchange": "NYS",
+     "cap": 1023027.0
+    },
+    {
+     "qaid": "92826C83",
+     "ticker": "V UN Equity",
+     "name": "Visa Inc",
+     "iso2": "US",
+     "country": "United States",
+     "region": "US",
+     "gsector": "financials",
+     "gindustry": "financial_services",
+     "exchange": "NYS",
+     "cap": 865975.0
+    },
+    {
+     "qaid": "57636Q10",
+     "ticker": "MA UN Equity",
+     "name": "Mastercard Inc",
+     "iso2": "US",
+     "country": "United States",
+     "region": "US",
+     "gsector": "financials",
+     "gindustry": "financial_services",
+     "exchange": "NYS",
+     "cap": 681599.0
+    },
+    {
+     "qaid": "BAC",
+     "ticker": "BAC UN Equity",
+     "name": "Bank of America Corp",
+     "iso2": "US",
+     "country": "United States",
+     "region": "US",
+     "gsector": "financials",
+     "gindustry": "banks",
+     "exchange": "NYS",
+     "cap": 600507.0
+    },
+    {
+     "qaid": "MWD",
+     "ticker": "MS UN Equity",
+     "name": "Morgan Stanley",
+     "iso2": "US",
+     "country": "United States",
+     "region": "US",
+     "gsector": "financials",
+     "gindustry": "financial_services",
+     "exchange": "NYS",
+     "cap": 486173.0
+    },
+    {
+     "qaid": "@HSBCH1",
+     "ticker": "HSBA LN Equity",
+     "name": "HSBC Holdings PLC",
+     "iso2": "GB",
+     "country": "United Kingdom",
+     "region": "EU",
+     "gsector": "financials",
+     "gindustry": "banks",
+     "exchange": "LSE",
+     "cap": 479680.0
+    },
+    {
+     "qaid": "GS",
+     "ticker": "GS UN Equity",
+     "name": "Goldman Sachs Group Inc",
+     "iso2": "US",
+     "country": "United States",
+     "region": "US",
+     "gsector": "financials",
+     "gindustry": "financial_services",
+     "exchange": "NYS",
+     "cap": 433978.0
+    },
+    {
+     "qaid": "RY",
+     "ticker": "RY CT Equity",
+     "name": "Royal Bank of Canada",
+     "iso2": "CA",
+     "country": "Canada",
+     "region": "",
+     "gsector": "financials",
+     "gindustry": "banks",
+     "exchange": "TOR",
+     "cap": 409512.0
+    },
+    {
+     "qaid": "WFC",
+     "ticker": "WFC UN Equity",
+     "name": "Wells Fargo & Co",
+     "iso2": "US",
+     "country": "United States",
+     "region": "US",
+     "gsector": "financials",
+     "gindustry": "banks",
+     "exchange": "NYS",
+     "cap": 377028.0
+    }
+   ],
+   "communication_services": [
+    {
+     "qaid": "GOOG",
+     "ticker": "GOOGL UW Equity",
+     "name": "Alphabet Inc",
+     "iso2": "US",
+     "country": "United States",
+     "region": "US",
+     "gsector": "communication_services",
+     "gindustry": "media_ent",
+     "exchange": "NSM",
+     "cap": 3035300.0
+    },
+    {
+     "qaid": "38259P70",
+     "ticker": "GOOG UW Equity",
+     "name": "Alphabet Inc",
+     "iso2": "US",
+     "country": "United States",
+     "region": "US",
+     "gsector": "communication_services",
+     "gindustry": "media_ent",
+     "exchange": "NSM",
+     "cap": 2814989.0
+    },
+    {
+     "qaid": "30303M10",
+     "ticker": "META UW Equity",
+     "name": "Meta Platforms Inc",
+     "iso2": "US",
+     "country": "United States",
+     "region": "US",
+     "gsector": "communication_services",
+     "gindustry": "media_ent",
+     "exchange": "NSM",
+     "cap": 1844353.0
+    },
+    {
+     "qaid": "84615Q10",
+     "ticker": "SPCX UW Equity",
+     "name": "Space Exploration Technologies Corp",
+     "iso2": "US",
+     "country": "United States",
+     "region": "US",
+     "gsector": "communication_services",
+     "gindustry": "telecom",
+     "exchange": "NSM",
+     "cap": 1742079.0
+    },
+    {
+     "qaid": "@TENCE1",
+     "ticker": "700 HK Equity",
+     "name": "Tencent Holdings Ltd",
+     "iso2": "CN",
+     "country": "China",
+     "region": "AP",
+     "gsector": "communication_services",
+     "gindustry": "media_ent",
+     "exchange": "HKG",
+     "cap": 1440457.0
+    },
+    {
+     "qaid": "NTFZ",
+     "ticker": "NFLX UW Equity",
+     "name": "Netflix Inc",
+     "iso2": "US",
+     "country": "United States",
+     "region": "US",
+     "gsector": "communication_services",
+     "gindustry": "media_ent",
+     "exchange": "NSM",
+     "cap": 471102.0
+    },
+    {
+     "qaid": "@SOFTB17",
+     "ticker": "9984 JT Equity",
+     "name": "SoftBank Group Corp",
+     "iso2": "JP",
+     "country": "Japan",
+     "region": "JP",
+     "gsector": "communication_services",
+     "gindustry": "telecom",
+     "exchange": "TYO",
+     "cap": 314598.0
+    },
+    {
+     "qaid": "MPCS",
+     "ticker": "TMUS UW Equity",
+     "name": "T-Mobile US Inc",
+     "iso2": "US",
+     "country": "United States",
+     "region": "US",
+     "gsector": "communication_services",
+     "gindustry": "telecom",
+     "exchange": "NSM",
+     "cap": 276800.0
+    },
+    {
+     "qaid": "VZ",
+     "ticker": "VZ UN Equity",
+     "name": "Verizon Communications Inc",
+     "iso2": "US",
+     "country": "United States",
+     "region": "US",
+     "gsector": "communication_services",
+     "gindustry": "telecom",
+     "exchange": "NYS",
+     "cap": 256050.0
+    },
+    {
+     "qaid": "DIS",
+     "ticker": "DIS UN Equity",
+     "name": "Walt Disney Co",
+     "iso2": "US",
+     "country": "United States",
+     "region": "US",
+     "gsector": "communication_services",
+     "gindustry": "media_ent",
+     "exchange": "NYS",
+     "cap": 248948.0
+    }
+   ],
+   "information_technology": [
+    {
+     "qaid": "NVDA",
+     "ticker": "NVDA UW Equity",
+     "name": "NVIDIA Corp",
+     "iso2": "US",
+     "country": "United States",
+     "region": "US",
+     "gsector": "information_technology",
+     "gindustry": "semis",
+     "exchange": "NSM",
+     "cap": 6793285.0
+    },
+    {
+     "qaid": "AAPL",
+     "ticker": "AAPL UW Equity",
+     "name": "Apple Inc",
+     "iso2": "US",
+     "country": "United States",
+     "region": "US",
+     "gsector": "information_technology",
+     "gindustry": "tech_hw",
+     "exchange": "NSM",
+     "cap": 6531159.0
+    },
+    {
+     "qaid": "MSFT",
+     "ticker": "MSFT UW Equity",
+     "name": "Microsoft Corp",
+     "iso2": "US",
+     "country": "United States",
+     "region": "US",
+     "gsector": "information_technology",
+     "gindustry": "software_services",
+     "exchange": "NSM",
+     "cap": 4179419.0
+    },
+    {
+     "qaid": "@TAIWA91",
+     "ticker": "2330 TT Equity",
+     "name": "Taiwan Semiconductor Manufacturing Co Ltd",
+     "iso2": "TW",
+     "country": "Taiwan",
+     "region": "AP",
+     "gsector": "information_technology",
+     "gindustry": "semis",
+     "exchange": "TAI",
+     "cap": 2860101.0
+    },
+    {
+     "qaid": "Y0486S10",
+     "ticker": "AVGO UW Equity",
+     "name": "Broadcom Inc",
+     "iso2": "US",
+     "country": "United States",
+     "region": "US",
+     "gsector": "information_technology",
+     "gindustry": "semis",
+     "exchange": "NSM",
+     "cap": 2470813.0
+    },
+    {
+     "qaid": "@SAMSU48",
+     "ticker": "005930 KP Equity",
+     "name": "Samsung Electronics Co Ltd",
+     "iso2": "KR",
+     "country": "South Korea",
+     "region": "AP",
+     "gsector": "information_technology",
+     "gindustry": "tech_hw",
+     "exchange": "KSC",
+     "cap": 1704734.0
+    },
+    {
+     "qaid": "@HYNIX1",
+     "ticker": "000660 KP Equity",
+     "name": "SK Hynix Inc",
+     "iso2": "KR",
+     "country": "South Korea",
+     "region": "AP",
+     "gsector": "information_technology",
+     "gindustry": "semis",
+     "exchange": "KSC",
+     "cap": 1628308.0
+    },
+    {
+     "qaid": "MU",
+     "ticker": "MU UW Equity",
+     "name": "Micron Technology Inc",
+     "iso2": "US",
+     "country": "United States",
+     "region": "US",
+     "gsector": "information_technology",
+     "gindustry": "semis",
+     "exchange": "NSM",
+     "cap": 1587478.0
+    },
+    {
+     "qaid": "AMD",
+     "ticker": "AMD UW Equity",
+     "name": "Advanced Micro Devices Inc",
+     "iso2": "US",
+     "country": "United States",
+     "region": "US",
+     "gsector": "information_technology",
+     "gindustry": "semis",
+     "exchange": "NSM",
+     "cap": 1216565.0
+    },
+    {
+     "qaid": "@ASMLH1",
+     "ticker": "ASML NA Equity",
+     "name": "ASML Holding NV",
+     "iso2": "NL",
+     "country": "Netherlands",
+     "region": "EU",
+     "gsector": "information_technology",
+     "gindustry": "semis",
+     "exchange": "AEX",
+     "cap": 1045370.0
+    }
+   ],
+   "materials": [
+    {
+     "qaid": "G5494J10",
+     "ticker": "LIN UW Equity",
+     "name": "Linde PLC",
+     "iso2": "US",
+     "country": "United States",
+     "region": "US",
+     "gsector": "materials",
+     "gindustry": "materials",
+     "exchange": "NSM",
+     "cap": 364148.0
+    },
+    {
+     "qaid": "@BHPBI11",
+     "ticker": "BHP AU",
+     "name": "BHP Group Ltd",
+     "iso2": "AU",
+     "country": "Australia",
+     "region": "AP",
+     "gsector": "materials",
+     "gindustry": "materials",
+     "exchange": "ASX",
+     "cap": 307424.2
+    },
+    {
+     "qaid": "PCU",
+     "ticker": "SCCO UN Equity",
+     "name": "Southern Copper Corp",
+     "iso2": "PE",
+     "country": "Peru",
+     "region": "EE",
+     "gsector": "materials",
+     "gindustry": "materials",
+     "exchange": "NYS",
+     "cap": 206776.0
+    },
+    {
+     "qaid": "@AIRLI2",
+     "ticker": "AI FP Equity",
+     "name": "L'Air Liquide Societe Anonyme pour l'Etude et l'Exploitation des Procedes Georges Claude SA",
+     "iso2": "FR",
+     "country": "France",
+     "region": "EU",
+     "gsector": "materials",
+     "gindustry": "materials",
+     "exchange": "PAR",
+     "cap": 189601.0
+    },
+    {
+     "qaid": "@RIOTI1",
+     "ticker": "RIO LN Equity",
+     "name": "Rio Tinto PLC",
+     "iso2": "GB",
+     "country": "United Kingdom",
+     "region": "EU",
+     "gsector": "materials",
+     "gindustry": "materials",
+     "exchange": "LSE",
+     "cap": 170707.0
+    },
+    {
+     "qaid": "NEM",
+     "ticker": "NEM UN Equity",
+     "name": "Newmont Corporation",
+     "iso2": "US",
+     "country": "United States",
+     "region": "US",
+     "gsector": "materials",
+     "gindustry": "materials",
+     "exchange": "NYS",
+     "cap": 149262.0
+    },
+    {
+     "qaid": "@GPOME1",
+     "ticker": "GMEXICOB MF Equity",
+     "name": "Grupo Mexico SAB de CV",
+     "iso2": "MX",
+     "country": "Mexico",
+     "region": "EE",
+     "gsector": "materials",
+     "gindustry": "materials",
+     "exchange": "MEX",
+     "cap": 128101.0
+    },
+    {
+     "qaid": "FCX",
+     "ticker": "FCX UN Equity",
+     "name": "Freeport-McMoRan Inc",
+     "iso2": "US",
+     "country": "United States",
+     "region": "US",
+     "gsector": "materials",
+     "gindustry": "materials",
+     "exchange": "NYS",
+     "cap": 126285.0
+    },
+    {
+     "qaid": "SHW",
+     "ticker": "SHW UN Equity",
+     "name": "Sherwin-Williams Co",
+     "iso2": "US",
+     "country": "United States",
+     "region": "US",
+     "gsector": "materials",
+     "gindustry": "materials",
+     "exchange": "NYS",
+     "cap": 125256.0
+    },
+    {
+     "qaid": "@SHINE6",
+     "ticker": "4063 JT Equity",
+     "name": "Shin-Etsu Chemical Co Ltd",
+     "iso2": "JP",
+     "country": "Japan",
+     "region": "JP",
+     "gsector": "materials",
+     "gindustry": "materials",
+     "exchange": "TYO",
+     "cap": 123313.0
+    }
+   ]
+  },
+  "top_by_country": {
+   "AU": [
+    {
+     "qaid": "@BHPBI11",
+     "ticker": "BHP AU",
+     "name": "BHP Group Ltd",
+     "iso2": "AU",
+     "country": "Australia",
+     "region": "AP",
+     "gsector": "materials",
+     "gindustry": "materials",
+     "exchange": "ASX",
+     "cap": 307424.2
+    },
+    {
+     "qaid": "@CMNWL6",
+     "ticker": "CBA AU",
+     "name": "Commonwealth Bank of Australia",
+     "iso2": "AU",
+     "country": "Australia",
+     "region": "AP",
+     "gsector": "financials",
+     "gindustry": "banks",
+     "exchange": "ASX",
+     "cap": 276154.76
+    },
+    {
+     "qaid": "@MACQU4224",
+     "ticker": "MQG AU",
+     "name": "Macquarie Group Ltd",
+     "iso2": "AU",
+     "country": "Australia",
+     "region": "AP",
+     "gsector": "financials",
+     "gindustry": "financial_services",
+     "exchange": "ASX",
+     "cap": 193081.49
+    },
+    {
+     "qaid": "@WESTP10",
+     "ticker": "WBC AU",
+     "name": "Westpac Banking Corp",
+     "iso2": "AU",
+     "country": "Australia",
+     "region": "AP",
+     "gsector": "financials",
+     "gindustry": "banks",
+     "exchange": "ASX",
+     "cap": 122070.62
+    },
+    {
+     "qaid": "@NATLA14",
+     "ticker": "NAB AU",
+     "name": "National Australia Bank Ltd",
+     "iso2": "AU",
+     "country": "Australia",
+     "region": "AP",
+     "gsector": "financials",
+     "gindustry": "banks",
+     "exchange": "ASX",
+     "cap": 120237.16
+    }
+   ],
+   "US": [
+    {
+     "qaid": "NVDA",
+     "ticker": "NVDA UW Equity",
+     "name": "NVIDIA Corp",
+     "iso2": "US",
+     "country": "United States",
+     "region": "US",
+     "gsector": "information_technology",
+     "gindustry": "semis",
+     "exchange": "NSM",
+     "cap": 6793285.0
+    },
+    {
+     "qaid": "AAPL",
+     "ticker": "AAPL UW Equity",
+     "name": "Apple Inc",
+     "iso2": "US",
+     "country": "United States",
+     "region": "US",
+     "gsector": "information_technology",
+     "gindustry": "tech_hw",
+     "exchange": "NSM",
+     "cap": 6531159.0
+    },
+    {
+     "qaid": "MSFT",
+     "ticker": "MSFT UW Equity",
+     "name": "Microsoft Corp",
+     "iso2": "US",
+     "country": "United States",
+     "region": "US",
+     "gsector": "information_technology",
+     "gindustry": "software_services",
+     "exchange": "NSM",
+     "cap": 4179419.0
+    },
+    {
+     "qaid": "AMZN",
+     "ticker": "AMZN UW Equity",
+     "name": "Amazon.com Inc",
+     "iso2": "US",
+     "country": "United States",
+     "region": "US",
+     "gsector": "consumer_discretionary",
+     "gindustry": "cd_retail",
+     "exchange": "NSM",
+     "cap": 3761147.0
+    },
+    {
+     "qaid": "GOOG",
+     "ticker": "GOOGL UW Equity",
+     "name": "Alphabet Inc",
+     "iso2": "US",
+     "country": "United States",
+     "region": "US",
+     "gsector": "communication_services",
+     "gindustry": "media_ent",
+     "exchange": "NSM",
+     "cap": 3035300.0
+    }
+   ],
+   "TW": [
+    {
+     "qaid": "@TAIWA91",
+     "ticker": "2330 TT Equity",
+     "name": "Taiwan Semiconductor Manufacturing Co Ltd",
+     "iso2": "TW",
+     "country": "Taiwan",
+     "region": "AP",
+     "gsector": "information_technology",
+     "gindustry": "semis",
+     "exchange": "TAI",
+     "cap": 2860101.0
+    },
+    {
+     "qaid": "@MEDIA42",
+     "ticker": "2454 TT Equity",
+     "name": "MediaTek Inc",
+     "iso2": "TW",
+     "country": "Taiwan",
+     "region": "AP",
+     "gsector": "information_technology",
+     "gindustry": "semis",
+     "exchange": "TAI",
+     "cap": 303507.0
+    },
+    {
+     "qaid": "@DELTA40",
+     "ticker": "2308 TT Equity",
+     "name": "Delta Electronics Inc",
+     "iso2": "TW",
+     "country": "Taiwan",
+     "region": "AP",
+     "gsector": "information_technology",
+     "gindustry": "tech_hw",
+     "exchange": "TAI",
+     "cap": 243131.0
+    },
+    {
+     "qaid": "@HONHA4",
+     "ticker": "2317 TT Equity",
+     "name": "Hon Hai Precision Industry Co Ltd",
+     "iso2": "TW",
+     "country": "Taiwan",
+     "region": "AP",
+     "gsector": "information_technology",
+     "gindustry": "tech_hw",
+     "exchange": "TAI",
+     "cap": 152192.0
+    },
+    {
+     "qaid": "@ASEIN1",
+     "ticker": "3711 TT Equity",
+     "name": "ASE Technology Holding Co Ltd",
+     "iso2": "TW",
+     "country": "Taiwan",
+     "region": "AP",
+     "gsector": "information_technology",
+     "gindustry": "semis",
+     "exchange": "TAI",
+     "cap": 137234.0
+    }
+   ],
+   "KR": [
+    {
+     "qaid": "@SAMSU48",
+     "ticker": "005930 KP Equity",
+     "name": "Samsung Electronics Co Ltd",
+     "iso2": "KR",
+     "country": "South Korea",
+     "region": "AP",
+     "gsector": "information_technology",
+     "gindustry": "tech_hw",
+     "exchange": "KSC",
+     "cap": 1704734.0
+    },
+    {
+     "qaid": "@HYNIX1",
+     "ticker": "000660 KP Equity",
+     "name": "SK Hynix Inc",
+     "iso2": "KR",
+     "country": "South Korea",
+     "region": "AP",
+     "gsector": "information_technology",
+     "gindustry": "semis",
+     "exchange": "KSC",
+     "cap": 1628308.0
+    },
+    {
+     "qaid": "@SKSQU1",
+     "ticker": "402340 KP Equity",
+     "name": "SK Square Co Ltd",
+     "iso2": "KR",
+     "country": "South Korea",
+     "region": "AP",
+     "gsector": "industrials",
+     "gindustry": "capital_goods",
+     "exchange": "KSC",
+     "cap": 197550.0
+    },
+    {
+     "qaid": "@SAMSU61",
+     "ticker": "005935 KP Equity",
+     "name": "Samsung Electronics Co Ltd",
+     "iso2": "KR",
+     "country": "South Korea",
+     "region": "AP",
+     "gsector": "information_technology",
+     "gindustry": "tech_hw",
+     "exchange": "KSC",
+     "cap": 157237.0
+    },
+    {
+     "qaid": "@SAMSU46",
+     "ticker": "009150 KP Equity",
+     "name": "Samsung Electro-Mechanics Co Ltd",
+     "iso2": "KR",
+     "country": "South Korea",
+     "region": "AP",
+     "gsector": "information_technology",
+     "gindustry": "tech_hw",
+     "exchange": "KSC",
+     "cap": 139970.0
+    }
+   ],
+   "NL": [
+    {
+     "qaid": "@ASMLH1",
+     "ticker": "ASML NA Equity",
+     "name": "ASML Holding NV",
+     "iso2": "NL",
+     "country": "Netherlands",
+     "region": "EU",
+     "gsector": "information_technology",
+     "gindustry": "semis",
+     "exchange": "AEX",
+     "cap": 1045370.0
+    },
+    {
+     "qaid": "@INGGR27",
+     "ticker": "INGA NA Equity",
+     "name": "ING Groep NV",
+     "iso2": "NL",
+     "country": "Netherlands",
+     "region": "EU",
+     "gsector": "financials",
+     "gindustry": "banks",
+     "exchange": "AEX",
+     "cap": 136139.0
+    },
+    {
+     "qaid": "@PROSU1",
+     "ticker": "PRX NA Equity",
+     "name": "Prosus NV",
+     "iso2": "NL",
+     "country": "Netherlands",
+     "region": "EU",
+     "gsector": "consumer_discretionary",
+     "gindustry": "cd_retail",
+     "exchange": "AEX",
+     "cap": 133293.0
+    },
+    {
+     "qaid": "@ASMIN1",
+     "ticker": "ASM NA Equity",
+     "name": "ASM International NV",
+     "iso2": "NL",
+     "country": "Netherlands",
+     "region": "EU",
+     "gsector": "information_technology",
+     "gindustry": "semis",
+     "exchange": "AEX",
+     "cap": 79302.0
+    },
+    {
+     "qaid": "@HEINE8",
+     "ticker": "HEIA NA Equity",
+     "name": "Heineken NV",
+     "iso2": "NL",
+     "country": "Netherlands",
+     "region": "EU",
+     "gsector": "consumer_staples",
+     "gindustry": "food_bev_tobacco",
+     "exchange": "AEX",
+     "cap": 71073.0
+    }
+   ],
+   "CN": [
+    {
+     "qaid": "@TENCE1",
+     "ticker": "700 HK Equity",
+     "name": "Tencent Holdings Ltd",
+     "iso2": "CN",
+     "country": "China",
+     "region": "AP",
+     "gsector": "communication_services",
+     "gindustry": "media_ent",
+     "exchange": "HKG",
+     "cap": 1440457.0
+    },
+    {
+     "qaid": "@CHINA377",
+     "ticker": "939 HK Equity",
+     "name": "China Construction Bank Corp",
+     "iso2": "CN",
+     "country": "China",
+     "region": "AP",
+     "gsector": "financials",
+     "gindustry": "banks",
+     "exchange": "SHH",
+     "cap": 343610.0
+    },
+    {
+     "qaid": "@ALIBA15",
+     "ticker": "9988 HK Equity",
+     "name": "Alibaba Group Holding Ltd",
+     "iso2": "CN",
+     "country": "China",
+     "region": "AP",
+     "gsector": "consumer_discretionary",
+     "gindustry": "cd_retail",
+     "exchange": "NYS",
+     "cap": 332013.0
+    },
+    {
+     "qaid": "72230410",
+     "ticker": "PDD UW Equity",
+     "name": "PDD Holdings Inc",
+     "iso2": "CN",
+     "country": "China",
+     "region": "AP",
+     "gsector": "consumer_discretionary",
+     "gindustry": "cd_retail",
+     "exchange": "NSM",
+     "cap": 168970.0
+    },
+    {
+     "qaid": "@NETEA10",
+     "ticker": "9999 HK Equity",
+     "name": "NetEase Inc",
+     "iso2": "CN",
+     "country": "China",
+     "region": "AP",
+     "gsector": "communication_services",
+     "gindustry": "media_ent",
+     "exchange": "NSM",
+     "cap": 121680.0
+    }
+   ],
+   "GB": [
+    {
+     "qaid": "@HSBCH1",
+     "ticker": "HSBA LN Equity",
+     "name": "HSBC Holdings PLC",
+     "iso2": "GB",
+     "country": "United Kingdom",
+     "region": "EU",
+     "gsector": "financials",
+     "gindustry": "banks",
+     "exchange": "LSE",
+     "cap": 479680.0
+    },
+    {
+     "qaid": "@ASTRA10",
+     "ticker": "AZN LN Equity",
+     "name": "AstraZeneca PLC",
+     "iso2": "GB",
+     "country": "United Kingdom",
+     "region": "EU",
+     "gsector": "health_care",
+     "gindustry": "pharma_biotech_life",
+     "exchange": "LSE",
+     "cap": 431358.0
+    },
+    {
+     "qaid": "@ROYAL3",
+     "ticker": "SHEL LN Equity",
+     "name": "Shell PLC",
+     "iso2": "GB",
+     "country": "United Kingdom",
+     "region": "EU",
+     "gsector": "energy",
+     "gindustry": "energy",
+     "exchange": "LSE",
+     "cap": 309900.0
+    },
+    {
+     "qaid": "@ROLLS6",
+     "ticker": "RR/ LN Equity",
+     "name": "Rolls-Royce Holdings PLC",
+     "iso2": "GB",
+     "country": "United Kingdom",
+     "region": "EU",
+     "gsector": "industrials",
+     "gindustry": "capital_goods",
+     "exchange": "LSE",
+     "cap": 241758.0
+    },
+    {
+     "qaid": "@BRITA19",
+     "ticker": "BATS LN Equity",
+     "name": "British American Tobacco P.l.c",
+     "iso2": "GB",
+     "country": "United Kingdom",
+     "region": "EU",
+     "gsector": "consumer_staples",
+     "gindustry": "food_bev_tobacco",
+     "exchange": "LSE",
+     "cap": 192500.0
+    }
+   ],
+   "CH": [
+    {
+     "qaid": "@NOVAR21",
+     "ticker": "NOVN SE Equity",
+     "name": "Novartis AG",
+     "iso2": "CH",
+     "country": "Switzerland",
+     "region": "EU",
+     "gsector": "health_care",
+     "gindustry": "pharma_biotech_life",
+     "exchange": "VTX",
+     "cap": 466829.0
+    },
+    {
+     "qaid": "@ROCHE11",
+     "ticker": "ROP SE Equity",
+     "name": "Roche Holding AG",
+     "iso2": "CH",
+     "country": "Switzerland",
+     "region": "EU",
+     "gsector": "health_care",
+     "gindustry": "pharma_biotech_life",
+     "exchange": "VTX",
+     "cap": 429164.0
+    },
+    {
+     "qaid": "@NESTL17",
+     "ticker": "NESN SE Equity",
+     "name": "Nestle SA",
+     "iso2": "CH",
+     "country": "Switzerland",
+     "region": "EU",
+     "gsector": "consumer_staples",
+     "gindustry": "food_bev_tobacco",
+     "exchange": "VTX",
+     "cap": 390697.0
+    },
+    {
+     "qaid": "@BBCBR3",
+     "ticker": "ABBN SE Equity",
+     "name": "Abb Ltd",
+     "iso2": "CH",
+     "country": "Switzerland",
+     "region": "EU",
+     "gsector": "industrials",
+     "gindustry": "capital_goods",
+     "exchange": "VTX",
+     "cap": 285712.0
+    },
+    {
+     "qaid": "@UBSGR1",
+     "ticker": "UBSG SE Equity",
+     "name": "UBS Group AG",
+     "iso2": "CH",
+     "country": "Switzerland",
+     "region": "EU",
+     "gsector": "financials",
+     "gindustry": "financial_services",
+     "exchange": "VTX",
+     "cap": 242141.0
+    }
+   ],
+   "CA": [
+    {
+     "qaid": "RY",
+     "ticker": "RY CT Equity",
+     "name": "Royal Bank of Canada",
+     "iso2": "CA",
+     "country": "Canada",
+     "region": "",
+     "gsector": "financials",
+     "gindustry": "banks",
+     "exchange": "TOR",
+     "cap": 409512.0
+    },
+    {
+     "qaid": "TD",
+     "ticker": "TD CT Equity",
+     "name": "Toronto-dominion Bank",
+     "iso2": "CA",
+     "country": "Canada",
+     "region": "",
+     "gsector": "financials",
+     "gindustry": "banks",
+     "exchange": "TOR",
+     "cap": 288330.0
+    },
+    {
+     "qaid": "82509L10",
+     "ticker": "SHOP CT Equity",
+     "name": "Shopify Inc",
+     "iso2": "CA",
+     "country": "Canada",
+     "region": "",
+     "gsector": "information_technology",
+     "gindustry": "software_services",
+     "exchange": "NSM",
+     "cap": 209914.0
+    },
+    {
+     "qaid": "BMO",
+     "ticker": "BMO CT Equity",
+     "name": "Bank of Montreal",
+     "iso2": "CA",
+     "country": "Canada",
+     "region": "",
+     "gsector": "financials",
+     "gindustry": "banks",
+     "exchange": "TOR",
+     "cap": 175615.0
+    },
+    {
+     "qaid": "ENBR",
+     "ticker": "ENB CT Equity",
+     "name": "Enbridge Inc",
+     "iso2": "CA",
+     "country": "Canada",
+     "region": "",
+     "gsector": "energy",
+     "gindustry": "energy",
+     "exchange": "TOR",
+     "cap": 169990.0
+    }
+   ],
+   "DE": [
+    {
+     "qaid": "@SIEME18",
+     "ticker": "SIE GY Equity",
+     "name": "Siemens AG",
+     "iso2": "DE",
+     "country": "Germany",
+     "region": "EU",
+     "gsector": "industrials",
+     "gindustry": "capital_goods",
+     "exchange": "GER",
+     "cap": 366094.0
+    },
+    {
+     "qaid": "@SAPAG5",
+     "ticker": "SAP GY Equity",
+     "name": "SAP SE",
+     "iso2": "DE",
+     "country": "Germany",
+     "region": "EU",
+     "gsector": "information_technology",
+     "gindustry": "software_services",
+     "exchange": "GER",
+     "cap": 282684.0
+    },
+    {
+     "qaid": "@ALLIA45",
+     "ticker": "ALV GY Equity",
+     "name": "Allianz SE",
+     "iso2": "DE",
+     "country": "Germany",
+     "region": "EU",
+     "gsector": "financials",
+     "gindustry": "insurance",
+     "exchange": "GER",
+     "cap": 263159.0
+    },
+    {
+     "qaid": "@SIEME71",
+     "ticker": "ENR GY Equity",
+     "name": "Siemens Energy AG",
+     "iso2": "DE",
+     "country": "Germany",
+     "region": "EU",
+     "gsector": "industrials",
+     "gindustry": "capital_goods",
+     "exchange": "GER",
+     "cap": 238556.0
+    },
+    {
+     "qaid": "@DEUTS76",
+     "ticker": "DTE GY Equity",
+     "name": "Deutsche Telekom AG",
+     "iso2": "DE",
+     "country": "Germany",
+     "region": "EU",
+     "gsector": "communication_services",
+     "gindustry": "telecom",
+     "exchange": "GER",
+     "cap": 203206.0
+    }
+   ],
+   "JP": [
+    {
+     "qaid": "@KIOXI1",
+     "ticker": "285A JT Equity",
+     "name": "Kioxia Holdings Corp",
+     "iso2": "JP",
+     "country": "Japan",
+     "region": "JP",
+     "gsector": "information_technology",
+     "gindustry": "semis",
+     "exchange": "TYO",
+     "cap": 406995.0
+    },
+    {
+     "qaid": "@TOYOT17",
+     "ticker": "7203 JT Equity",
+     "name": "Toyota Motor Corp",
+     "iso2": "JP",
+     "country": "Japan",
+     "region": "JP",
+     "gsector": "consumer_discretionary",
+     "gindustry": "autos_components",
+     "exchange": "TYO",
+     "cap": 368508.0
+    },
+    {
+     "qaid": "@MITSU52",
+     "ticker": "8306 JT Equity",
+     "name": "Mitsubishi UFJ Financial Group Inc",
+     "iso2": "JP",
+     "country": "Japan",
+     "region": "JP",
+     "gsector": "financials",
+     "gindustry": "banks",
+     "exchange": "TYO",
+     "cap": 352414.0
+    },
+    {
+     "qaid": "@SOFTB17",
+     "ticker": "9984 JT Equity",
+     "name": "SoftBank Group Corp",
+     "iso2": "JP",
+     "country": "Japan",
+     "region": "JP",
+     "gsector": "communication_services",
+     "gindustry": "telecom",
+     "exchange": "TYO",
+     "cap": 314598.0
+    },
+    {
+     "qaid": "@TOKYO54",
+     "ticker": "8035 JT Equity",
+     "name": "Tokyo Electron Ltd",
+     "iso2": "JP",
+     "country": "Japan",
+     "region": "JP",
+     "gsector": "information_technology",
+     "gindustry": "semis",
+     "exchange": "TYO",
+     "cap": 308233.0
+    }
+   ],
+   "ES": [
+    {
+     "qaid": "@BCOSA26",
+     "ticker": "SAN SQ Equity",
+     "name": "Banco Santander SA",
+     "iso2": "ES",
+     "country": "Spain",
+     "region": "EU",
+     "gsector": "financials",
+     "gindustry": "banks",
+     "exchange": "MCE",
+     "cap": 300585.0
+    },
+    {
+     "qaid": "@INDIT2",
+     "ticker": "ITX SQ Equity",
+     "name": "Industria de Diseno Textil SA",
+     "iso2": "ES",
+     "country": "Spain",
+     "region": "EU",
+     "gsector": "consumer_discretionary",
+     "gindustry": "cd_retail",
+     "exchange": "MCE",
+     "cap": 293764.0
+    },
+    {
+     "qaid": "@IBERD2",
+     "ticker": "IBE SQ Equity",
+     "name": "Iberdrola SA",
+     "iso2": "ES",
+     "country": "Spain",
+     "region": "EU",
+     "gsector": "utilities",
+     "gindustry": "utilities",
+     "exchange": "MCE",
+     "cap": 242316.0
+    },
+    {
+     "qaid": "@BBVAB16",
+     "ticker": "BBVA SQ Equity",
+     "name": "Banco Bilbao Vizcaya Argentaria SA",
+     "iso2": "ES",
+     "country": "Spain",
+     "region": "EU",
+     "gsector": "financials",
+     "gindustry": "banks",
+     "exchange": "MCE",
+     "cap": 209138.0
+    },
+    {
+     "qaid": "@CRITE1",
+     "ticker": "CABK SQ Equity",
+     "name": "CaixaBank SA",
+     "iso2": "ES",
+     "country": "Spain",
+     "region": "EU",
+     "gsector": "financials",
+     "gindustry": "banks",
+     "exchange": "MCE",
+     "cap": 145414.0
+    }
+   ],
+   "FR": [
+    {
+     "qaid": "@LVMHM9",
+     "ticker": "MC FP Equity",
+     "name": "Lvmh Moet Hennessy Louis Vuitton SE",
+     "iso2": "FR",
+     "country": "France",
+     "region": "EU",
+     "gsector": "consumer_discretionary",
+     "gindustry": "durables_apparel",
+     "exchange": "PAR",
+     "cap": 404995.0
+    },
+    {
+     "qaid": "@LOREA1",
+     "ticker": "OR FP Equity",
+     "name": "L'Oreal SA",
+     "iso2": "FR",
+     "country": "France",
+     "region": "EU",
+     "gsector": "consumer_staples",
+     "gindustry": "household_personal",
+     "exchange": "PAR",
+     "cap": 335518.0
+    },
+    {
+     "qaid": "@HERME8",
+     "ticker": "RMS FP Equity",
+     "name": "Hermes International SCA",
+     "iso2": "FR",
+     "country": "France",
+     "region": "EU",
+     "gsector": "consumer_discretionary",
+     "gindustry": "durables_apparel",
+     "exchange": "PAR",
+     "cap": 285469.0
+    },
+    {
+     "qaid": "@EADSE1",
+     "ticker": "AIR FP Equity",
+     "name": "Airbus SE",
+     "iso2": "FR",
+     "country": "France",
+     "region": "EU",
+     "gsector": "industrials",
+     "gindustry": "capital_goods",
+     "exchange": "PAR",
+     "cap": 269140.0
+    },
+    {
+     "qaid": "@SCHNE7",
+     "ticker": "SU FP Equity",
+     "name": "Schneider Electric SE",
+     "iso2": "FR",
+     "country": "France",
+     "region": "EU",
+     "gsector": "industrials",
+     "gindustry": "capital_goods",
+     "exchange": "PAR",
+     "cap": 266376.0
+    }
+   ],
+   "DK": [
+    {
+     "qaid": "@NOVON4",
+     "ticker": "NOVOB DC Equity",
+     "name": "Novo Nordisk A/S",
+     "iso2": "DK",
+     "country": "Denmark",
+     "region": "EU",
+     "gsector": "health_care",
+     "gindustry": "pharma_biotech_life",
+     "exchange": "CPH",
+     "cap": 244318.0
+    },
+    {
+     "qaid": "@DSVDK2",
+     "ticker": "DSV DC Equity",
+     "name": "DSV A/S",
+     "iso2": "DK",
+     "country": "Denmark",
+     "region": "EU",
+     "gsector": "industrials",
+     "gindustry": "transport",
+     "exchange": "CPH",
+     "cap": 88019.0
+    },
+    {
+     "qaid": "@DANSK23",
+     "ticker": "DANSKE DC Equity",
+     "name": "Danske Bank A/S",
+     "iso2": "DK",
+     "country": "Denmark",
+     "region": "EU",
+     "gsector": "financials",
+     "gindustry": "banks",
+     "exchange": "CPH",
+     "cap": 65178.0
+    },
+    {
+     "qaid": "@DONGE1",
+     "ticker": "ORSTED DC Equity",
+     "name": "Oersted A/S",
+     "iso2": "DK",
+     "country": "Denmark",
+     "region": "EU",
+     "gsector": "utilities",
+     "gindustry": "utilities",
+     "exchange": "CPH",
+     "cap": 46180.0
+    },
+    {
+     "qaid": "@VESTA3",
+     "ticker": "VWS DC Equity",
+     "name": "Vestas Wind Systems A/S",
+     "iso2": "DK",
+     "country": "Denmark",
+     "region": "EU",
+     "gsector": "industrials",
+     "gindustry": "capital_goods",
+     "exchange": "CPH",
+     "cap": 41086.0
+    }
+   ],
+   "IT": [
+    {
+     "qaid": "@UNICR2",
+     "ticker": "UCG IM Equity",
+     "name": "UniCredit SpA",
+     "iso2": "IT",
+     "country": "Italy",
+     "region": "EU",
+     "gsector": "financials",
+     "gindustry": "banks",
+     "exchange": "MIL",
+     "cap": 203659.0
+    },
+    {
+     "qaid": "@BCAIN2",
+     "ticker": "ISP IM Equity",
+     "name": "Intesa Sanpaolo SpA",
+     "iso2": "IT",
+     "country": "Italy",
+     "region": "EU",
+     "gsector": "financials",
+     "gindustry": "banks",
+     "exchange": "MIL",
+     "cap": 179722.0
+    },
+    {
+     "qaid": "@ENELE1",
+     "ticker": "ENEL IM Equity",
+     "name": "Enel SpA",
+     "iso2": "IT",
+     "country": "Italy",
+     "region": "EU",
+     "gsector": "utilities",
+     "gindustry": "utilities",
+     "exchange": "MIL",
+     "cap": 171886.0
+    },
+    {
+     "qaid": "@ASSIC1",
+     "ticker": "G IM Equity",
+     "name": "Assicurazioni Generali SpA",
+     "iso2": "IT",
+     "country": "Italy",
+     "region": "EU",
+     "gsector": "financials",
+     "gindustry": "insurance",
+     "exchange": "MIL",
+     "cap": 108460.0
+    },
+    {
+     "qaid": "@FERRA31",
+     "ticker": "RACE IM Equity",
+     "name": "Ferrari NV",
+     "iso2": "IT",
+     "country": "Italy",
+     "region": "EU",
+     "gsector": "consumer_discretionary",
+     "gindustry": "autos_components",
+     "exchange": "MIL",
+     "cap": 102545.0
+    }
+   ],
+   "SG": [
+    {
+     "qaid": "@DBSGR2",
+     "ticker": "DBS SP Equity",
+     "name": "DBS Group Holdings Ltd",
+     "iso2": "SG",
+     "country": "Singapore",
+     "region": "AP",
+     "gsector": "financials",
+     "gindustry": "banks",
+     "exchange": "SES",
+     "cap": 211796.0
+    },
+    {
+     "qaid": "@OVERS15",
+     "ticker": "OCBC SP Equity",
+     "name": "Oversea-Chinese Banking Corporation Ltd",
+     "iso2": "SG",
+     "country": "Singapore",
+     "region": "AP",
+     "gsector": "financials",
+     "gindustry": "banks",
+     "exchange": "SES",
+     "cap": 127100.0
+    },
+    {
+     "qaid": "81141R10",
+     "ticker": "SE UN Equity",
+     "name": "Sea Ltd",
+     "iso2": "SG",
+     "country": "Singapore",
+     "region": "AP",
+     "gsector": "consumer_discretionary",
+     "gindustry": "cd_retail",
+     "exchange": "NYS",
+     "cap": 84384.0
+    },
+    {
+     "qaid": "@SINGA52",
+     "ticker": "ST SP Equity",
+     "name": "Singapore Telecommunications Ltd",
+     "iso2": "SG",
+     "country": "Singapore",
+     "region": "AP",
+     "gsector": "communication_services",
+     "gindustry": "telecom",
+     "exchange": "SES",
+     "cap": 81571.0
+    },
+    {
+     "qaid": "@UTDOS11",
+     "ticker": "UOB SP Equity",
+     "name": "United Overseas Bank Ltd",
+     "iso2": "SG",
+     "country": "Singapore",
+     "region": "AP",
+     "gsector": "financials",
+     "gindustry": "banks",
+     "exchange": "SES",
+     "cap": 74697.0
+    }
+   ],
+   "HK": [
+    {
+     "qaid": "@AIAGR1",
+     "ticker": "1299 HK Equity",
+     "name": "AIA Group Ltd",
+     "iso2": "HK",
+     "country": "Hong Kong",
+     "region": "AP",
+     "gsector": "financials",
+     "gindustry": "insurance",
+     "exchange": "HKG",
+     "cap": 139228.0
+    },
+    {
+     "qaid": "@HONGK67",
+     "ticker": "388 HK Equity",
+     "name": "Hong Kong Exchanges and Clearing Ltd",
+     "iso2": "HK",
+     "country": "Hong Kong",
+     "region": "AP",
+     "gsector": "financials",
+     "gindustry": "financial_services",
+     "exchange": "HKG",
+     "cap": 87340.0
+    },
+    {
+     "qaid": "@BOCHO1",
+     "ticker": "2388 HK Equity",
+     "name": "BOC Hong Kong Holdings Ltd",
+     "iso2": "HK",
+     "country": "Hong Kong",
+     "region": "AP",
+     "gsector": "financials",
+     "gindustry": "banks",
+     "exchange": "HKG",
+     "cap": 83945.0
+    },
+    {
+     "qaid": "@SUNHU6",
+     "ticker": "16 HK Equity",
+     "name": "Sun Hung Kai Properties Ltd",
+     "iso2": "HK",
+     "country": "Hong Kong",
+     "region": "AP",
+     "gsector": "real_estate",
+     "gindustry": "real_estate",
+     "exchange": "HKG",
+     "cap": 61378.0
+    },
+    {
+     "qaid": "@CHEUN4",
+     "ticker": "1 HK Equity",
+     "name": "Ck Hutchison Holdings Ltd",
+     "iso2": "HK",
+     "country": "Hong Kong",
+     "region": "AP",
+     "gsector": "industrials",
+     "gindustry": "capital_goods",
+     "exchange": "HKG",
+     "cap": 46156.0
+    }
+   ],
+   "IN": [
+    {
+     "qaid": "@RELIA14",
+     "ticker": "RELIANCE IS Equity",
+     "name": "Reliance Industries Ltd",
+     "iso2": "IN",
+     "country": "India",
+     "region": "AP",
+     "gsector": "energy",
+     "gindustry": "energy",
+     "exchange": "NSI",
+     "cap": 267030.0
+    },
+    {
+     "qaid": "@HDFCB1",
+     "ticker": "HDFCB IS Equity",
+     "name": "HDFC Bank Ltd",
+     "iso2": "IN",
+     "country": "India",
+     "region": "AP",
+     "gsector": "financials",
+     "gindustry": "banks",
+     "exchange": "NSI",
+     "cap": 186688.0
+    },
+    {
+     "qaid": "@BHART5",
+     "ticker": "BHARTI IS Equity",
+     "name": "Bharti Airtel Ltd",
+     "iso2": "IN",
+     "country": "India",
+     "region": "AP",
+     "gsector": "communication_services",
+     "gindustry": "telecom",
+     "exchange": "NSI",
+     "cap": 176071.0
+    },
+    {
+     "qaid": "@ICICI5",
+     "ticker": "ICICIBC IS Equity",
+     "name": "ICICI Bank Ltd",
+     "iso2": "IN",
+     "country": "India",
+     "region": "AP",
+     "gsector": "financials",
+     "gindustry": "banks",
+     "exchange": "NSI",
+     "cap": 153211.0
+    },
+    {
+     "qaid": "@STATE16",
+     "ticker": "SBIN IS Equity",
+     "name": "State Bank of India",
+     "iso2": "IN",
+     "country": "India",
+     "region": "AP",
+     "gsector": "financials",
+     "gindustry": "banks",
+     "exchange": "NSI",
+     "cap": 145267.0
+    }
+   ],
+   "BE": [
+    {
+     "qaid": "@INTER124",
+     "ticker": "ABI BB Equity",
+     "name": "Anheuser-Busch Inbev SA",
+     "iso2": "BE",
+     "country": "Belgium",
+     "region": "EU",
+     "gsector": "consumer_staples",
+     "gindustry": "food_bev_tobacco",
+     "exchange": "BRU",
+     "cap": 214531.0
+    },
+    {
+     "qaid": "@ARGEN47",
+     "ticker": "ARGX BB Equity",
+     "name": "argenx SE",
+     "iso2": "BE",
+     "country": "Belgium",
+     "region": "EU",
+     "gsector": "health_care",
+     "gindustry": "pharma_biotech_life",
+     "exchange": "BRU",
+     "cap": 85137.0
+    },
+    {
+     "qaid": "@UCBNP1",
+     "ticker": "UCB BB Equity",
+     "name": "Ucb SA",
+     "iso2": "BE",
+     "country": "Belgium",
+     "region": "EU",
+     "gsector": "health_care",
+     "gindustry": "pharma_biotech_life",
+     "exchange": "BRU",
+     "cap": 83173.0
+    },
+    {
+     "qaid": "@KBCBA2",
+     "ticker": "KBC BB Equity",
+     "name": "Kbc Groep NV",
+     "iso2": "BE",
+     "country": "Belgium",
+     "region": "EU",
+     "gsector": "financials",
+     "gindustry": "banks",
+     "exchange": "BRU",
+     "cap": 83036.0
+    },
+    {
+     "qaid": "@ELIAN1",
+     "ticker": "ELI BB Equity",
+     "name": "Elia Group SA",
+     "iso2": "BE",
+     "country": "Belgium",
+     "region": "EU",
+     "gsector": "utilities",
+     "gindustry": "utilities",
+     "exchange": "BRU",
+     "cap": 25163.0
+    }
+   ],
+   "SE": [
+    {
+     "qaid": "@INVES115",
+     "ticker": "INVEB SS Equity",
+     "name": "Investor AB",
+     "iso2": "SE",
+     "country": "Sweden",
+     "region": "EU",
+     "gsector": "financials",
+     "gindustry": "financial_services",
+     "exchange": "STO",
+     "cap": 110322.0
+    },
+    {
+     "qaid": "@ATLAS13",
+     "ticker": "ATCOA SS Equity",
+     "name": "Atlas Copco AB",
+     "iso2": "SE",
+     "country": "Sweden",
+     "region": "EU",
+     "gsector": "industrials",
+     "gindustry": "capital_goods",
+     "exchange": "STO",
+     "cap": 98898.0
+    },
+    {
+     "qaid": "@VOLVO9",
+     "ticker": "VOLVB SS Equity",
+     "name": "Volvo AB",
+     "iso2": "SE",
+     "country": "Sweden",
+     "region": "EU",
+     "gsector": "industrials",
+     "gindustry": "capital_goods",
+     "exchange": "STO",
+     "cap": 80257.0
+    },
+    {
+     "qaid": "@SANDV10",
+     "ticker": "SAND SS Equity",
+     "name": "Sandvik AB",
+     "iso2": "SE",
+     "country": "Sweden",
+     "region": "EU",
+     "gsector": "industrials",
+     "gindustry": "capital_goods",
+     "exchange": "STO",
+     "cap": 77078.0
+    },
+    {
+     "qaid": "@FOREN5",
+     "ticker": "SWEDA SS Equity",
+     "name": "Swedbank AB",
+     "iso2": "SE",
+     "country": "Sweden",
+     "region": "EU",
+     "gsector": "financials",
+     "gindustry": "banks",
+     "exchange": "STO",
+     "cap": 61856.0
+    }
+   ],
+   "FI": [
+    {
+     "qaid": "@NOKIA1",
+     "ticker": "NOKIA FH Equity",
+     "name": "Nokia Oyj",
+     "iso2": "FI",
+     "country": "Finland",
+     "region": "EU",
+     "gsector": "information_technology",
+     "gindustry": "tech_hw",
+     "exchange": "HEX",
+     "cap": 105694.0
+    },
+    {
+     "qaid": "@NORDE24",
+     "ticker": "NDA FH Equity",
+     "name": "Nordea Bank Abp",
+     "iso2": "FI",
+     "country": "Finland",
+     "region": "EU",
+     "gsector": "financials",
+     "gindustry": "banks",
+     "exchange": "HEX",
+     "cap": 95295.0
+    },
+    {
+     "qaid": "@SAMPO1",
+     "ticker": "SAMPO FH Equity",
+     "name": "Sampo Oyj",
+     "iso2": "FI",
+     "country": "Finland",
+     "region": "EU",
+     "gsector": "financials",
+     "gindustry": "insurance",
+     "exchange": "HEX",
+     "cap": 40866.0
+    },
+    {
+     "qaid": "@KONEC8",
+     "ticker": "KNEBV FH Equity",
+     "name": "Kone Corp",
+     "iso2": "FI",
+     "country": "Finland",
+     "region": "EU",
+     "gsector": "industrials",
+     "gindustry": "capital_goods",
+     "exchange": "HEX",
+     "cap": 38041.0
+    },
+    {
+     "qaid": "@NESTE3",
+     "ticker": "NESTE FH Equity",
+     "name": "Neste Oyj",
+     "iso2": "FI",
+     "country": "Finland",
+     "region": "EU",
+     "gsector": "energy",
+     "gindustry": "energy",
+     "exchange": "HEX",
+     "cap": 35808.0
+    }
+   ],
+   "BR": [
+    {
+     "qaid": "@CIAVA1",
+     "ticker": "VALE3 BS Equity",
+     "name": "Vale SA",
+     "iso2": "BR",
+     "country": "Brazil",
+     "region": "EE",
+     "gsector": "materials",
+     "gindustry": "materials",
+     "exchange": "SAO",
+     "cap": 97564.0
+    },
+    {
+     "qaid": "G6683N10",
+     "ticker": "NU UN Equity",
+     "name": "Nu Holdings Ltd.",
+     "iso2": "BR",
+     "country": "Brazil",
+     "region": "EE",
+     "gsector": "financials",
+     "gindustry": "banks",
+     "exchange": "NYS",
+     "cap": 75284.0
+    },
+    {
+     "qaid": "@AMBEV1",
+     "ticker": "ABEV3 BS Equity",
+     "name": "Ambev SA",
+     "iso2": "BR",
+     "country": "Brazil",
+     "region": "EE",
+     "gsector": "consumer_staples",
+     "gindustry": "food_bev_tobacco",
+     "exchange": "SAO",
+     "cap": 71584.0
+    },
+    {
+     "qaid": "@BCOIT2",
+     "ticker": "ITUB3 BS Equity",
+     "name": "Itau Unibanco Holding SA",
+     "iso2": "BR",
+     "country": "Brazil",
+     "region": "EE",
+     "gsector": "financials",
+     "gindustry": "banks",
+     "exchange": "SAO",
+     "cap": 69689.0
+    },
+    {
+     "qaid": "@BCOIT3",
+     "ticker": "ITUB4 BS Equity",
+     "name": "Itau Unibanco Holding SA",
+     "iso2": "BR",
+     "country": "Brazil",
+     "region": "EE",
+     "gsector": "financials",
+     "gindustry": "banks",
+     "exchange": "SAO",
+     "cap": 64447.0
+    }
+   ],
+   "SA": [
+    {
+     "qaid": "@SAUDI110",
+     "ticker": "ARAMCO AB Equity",
+     "name": "Saudi Arabian Oil Co",
+     "iso2": "SA",
+     "country": "Saudi Arabia",
+     "region": "EE",
+     "gsector": "energy",
+     "gindustry": "energy",
+     "exchange": "SAU",
+     "cap": 2423837.0
+    },
+    {
+     "qaid": "@ALRAJ1",
+     "ticker": "RJHI AB Equity",
+     "name": "Al Rajhi Banking and Investment Corporation SJSC",
+     "iso2": "SA",
+     "country": "Saudi Arabia",
+     "region": "EE",
+     "gsector": "financials",
+     "gindustry": "banks",
+     "exchange": "SAU",
+     "cap": 151965.0
+    },
+    {
+     "qaid": "@NATIO235",
+     "ticker": "SNB AB Equity",
+     "name": "Saudi National Bank SJSC",
+     "iso2": "SA",
+     "country": "Saudi Arabia",
+     "region": "EE",
+     "gsector": "financials",
+     "gindustry": "banks",
+     "exchange": "SAU",
+     "cap": 89705.0
+    },
+    {
+     "qaid": "@SAUDI55",
+     "ticker": "MAADEN AB Equity",
+     "name": "Saudi Arabian Mining Company SJSC",
+     "iso2": "SA",
+     "country": "Saudi Arabia",
+     "region": "EE",
+     "gsector": "materials",
+     "gindustry": "materials",
+     "exchange": "SAU",
+     "cap": 87897.0
+    },
+    {
+     "qaid": "@SAUDI14",
+     "ticker": "STC AB Equity",
+     "name": "Saudi Telecom Company SJSC",
+     "iso2": "SA",
+     "country": "Saudi Arabia",
+     "region": "EE",
+     "gsector": "communication_services",
+     "gindustry": "telecom",
+     "exchange": "SAU",
+     "cap": 83043.0
+    }
+   ],
+   "ZA": [
+    {
+     "qaid": "@ANGLO133",
+     "ticker": "ANG SJ Equity",
+     "name": "Anglogold Ashanti PLC",
+     "iso2": "ZA",
+     "country": "South Africa",
+     "region": "EE",
+     "gsector": "materials",
+     "gindustry": "materials",
+     "exchange": "NYS",
+     "cap": 62383.0
+    },
+    {
+     "qaid": "@NASPE1",
+     "ticker": "NPN SJ Equity",
+     "name": "Naspers Ltd",
+     "iso2": "ZA",
+     "country": "South Africa",
+     "region": "EE",
+     "gsector": "consumer_discretionary",
+     "gindustry": "cd_retail",
+     "exchange": "JNB",
+     "cap": 53525.0
+    },
+    {
+     "qaid": "@CAPIT89",
+     "ticker": "CPI SJ Equity",
+     "name": "Capitec Bank Holdings Ltd",
+     "iso2": "ZA",
+     "country": "South Africa",
+     "region": "EE",
+     "gsector": "financials",
+     "gindustry": "banks",
+     "exchange": "JNB",
+     "cap": 49174.0
+    },
+    {
+     "qaid": "@FIRST61",
+     "ticker": "FSR SJ Equity",
+     "name": "FirstRand Ltd",
+     "iso2": "ZA",
+     "country": "South Africa",
+     "region": "EE",
+     "gsector": "financials",
+     "gindustry": "financial_services",
+     "exchange": "JNB",
+     "cap": 47988.0
+    },
+    {
+     "qaid": "@STAND300",
+     "ticker": "SBK SJ Equity",
+     "name": "Standard Bank Group Ltd",
+     "iso2": "ZA",
+     "country": "South Africa",
+     "region": "EE",
+     "gsector": "financials",
+     "gindustry": "banks",
+     "exchange": "JNB",
+     "cap": 47092.0
+    }
+   ],
+   "AT": [
+    {
+     "qaid": "@DIEER2",
+     "ticker": "EBS AV Equity",
+     "name": "Erste Group Bank AG",
+     "iso2": "AT",
+     "country": "Austria",
+     "region": "EU",
+     "gsector": "financials",
+     "gindustry": "banks",
+     "exchange": "VIE",
+     "cap": 79958.0
+    },
+    {
+     "qaid": "@OMVAG2",
+     "ticker": "OMV AV Equity",
+     "name": "OMV AG",
+     "iso2": "AT",
+     "country": "Austria",
+     "region": "EU",
+     "gsector": "energy",
+     "gindustry": "energy",
+     "exchange": "VIE",
+     "cap": 30524.0
+    },
+    {
+     "qaid": "@RAIFF8",
+     "ticker": "RBI AV Equity",
+     "name": "Raiffeisen Bank International AG",
+     "iso2": "AT",
+     "country": "Austria",
+     "region": "EU",
+     "gsector": "financials",
+     "gindustry": "banks",
+     "exchange": "VIE",
+     "cap": 30246.0
+    },
+    {
+     "qaid": "@BAWAG29",
+     "ticker": "BG AV Equity",
+     "name": "BAWAG Group AG",
+     "iso2": "AT",
+     "country": "Austria",
+     "region": "EU",
+     "gsector": "financials",
+     "gindustry": "banks",
+     "exchange": "VIE",
+     "cap": 22712.0
+    },
+    {
+     "qaid": "@OESTE3",
+     "ticker": "VER AV Equity",
+     "name": "Verbund AG",
+     "iso2": "AT",
+     "country": "Austria",
+     "region": "EU",
+     "gsector": "utilities",
+     "gindustry": "utilities",
+     "exchange": "VIE",
+     "cap": 15765.0
+    }
+   ],
+   "IL": [
+    {
+     "qaid": "TEVA",
+     "ticker": "TEVA UN Equity",
+     "name": "Teva Pharmaceutical Industries Limited..",
+     "iso2": "IL",
+     "country": "Israel",
+     "region": "EE",
+     "gsector": "health_care",
+     "gindustry": "pharma_biotech_life",
+     "exchange": "TLV",
+     "cap": 55428.0
+    },
+    {
+     "qaid": "@ELBIT6",
+     "ticker": "ESLT IT Equity",
+     "name": "Elbit Systems Ltd",
+     "iso2": "IL",
+     "country": "Israel",
+     "region": "EE",
+     "gsector": "industrials",
+     "gindustry": "capital_goods",
+     "exchange": "TLV",
+     "cap": 54724.0
+    },
+    {
+     "qaid": "@BKLEU6",
+     "ticker": "LUMI IT Equity",
+     "name": "Bank Leumi Le Israel BM",
+     "iso2": "IL",
+     "country": "Israel",
+     "region": "EE",
+     "gsector": "financials",
+     "gindustry": "banks",
+     "exchange": "TLV",
+     "cap": 47924.0
+    },
+    {
+     "qaid": "@BKHAP3",
+     "ticker": "POLI IT Equity",
+     "name": "Bank Hapoalim BM",
+     "iso2": "IL",
+     "country": "Israel",
+     "region": "EE",
+     "gsector": "financials",
+     "gindustry": "banks",
+     "exchange": "TLV",
+     "cap": 43695.0
+    },
+    {
+     "qaid": "@TOWER11",
+     "ticker": "TSEM IT Equity",
+     "name": "Tower Semiconductor Ltd",
+     "iso2": "IL",
+     "country": "Israel",
+     "region": "EE",
+     "gsector": "information_technology",
+     "gindustry": "semis",
+     "exchange": "NSM",
+     "cap": 36569.0
+    }
+   ],
+   "MX": [
+    {
+     "qaid": "@GPOME1",
+     "ticker": "GMEXICOB MF Equity",
+     "name": "Grupo Mexico SAB de CV",
+     "iso2": "MX",
+     "country": "Mexico",
+     "region": "EE",
+     "gsector": "materials",
+     "gindustry": "materials",
+     "exchange": "MEX",
+     "cap": 128101.0
+    },
+    {
+     "qaid": "@AMERI235",
+     "ticker": "AMXB MF Equity",
+     "name": "America Movil SAB de CV",
+     "iso2": "MX",
+     "country": "Mexico",
+     "region": "EE",
+     "gsector": "communication_services",
+     "gindustry": "telecom",
+     "exchange": "MEX",
+     "cap": 111638.0
+    },
+    {
+     "qaid": "@WALMA1",
+     "ticker": "WALMEX* MF Equity",
+     "name": "Wal Mart de Mexico SAB de CV",
+     "iso2": "MX",
+     "country": "Mexico",
+     "region": "EE",
+     "gsector": "consumer_staples",
+     "gindustry": "cs_retail",
+     "exchange": "MEX",
+     "cap": 71169.0
+    },
+    {
+     "qaid": "@GPOFI58",
+     "ticker": "GFNORTEO MF Equity",
+     "name": "Grupo Financiero Banorte SAB de CV",
+     "iso2": "MX",
+     "country": "Mexico",
+     "region": "EE",
+     "gsector": "financials",
+     "gindustry": "banks",
+     "exchange": "MEX",
+     "cap": 44484.0
+    },
+    {
+     "qaid": "@FOMEN6",
+     "ticker": "FEMSAUBD MF Equity",
+     "name": "Fomento Economico Mexicano SAB de CV",
+     "iso2": "MX",
+     "country": "Mexico",
+     "region": "EE",
+     "gsector": "consumer_staples",
+     "gindustry": "food_bev_tobacco",
+     "exchange": "MEX",
+     "cap": 36489.0
+    }
+   ],
+   "TH": [
+    {
+     "qaid": "@DELTA60",
+     "ticker": "DELTA TB Equity",
+     "name": "Delta Electronics Thailand PCL",
+     "iso2": "TH",
+     "country": "Thailand",
+     "region": "AP",
+     "gsector": "information_technology",
+     "gindustry": "tech_hw",
+     "exchange": "SET",
+     "cap": 170702.0
+    },
+    {
+     "qaid": "@ADVAN68",
+     "ticker": "ADVANC TB Equity",
+     "name": "Advanced Info Service PCL",
+     "iso2": "TH",
+     "country": "Thailand",
+     "region": "AP",
+     "gsector": "communication_services",
+     "gindustry": "telecom",
+     "exchange": "SET",
+     "cap": 48454.0
+    },
+    {
+     "qaid": "@PTTPU1",
+     "ticker": "PTT TB Equity",
+     "name": "PTT PCL",
+     "iso2": "TH",
+     "country": "Thailand",
+     "region": "AP",
+     "gsector": "energy",
+     "gindustry": "energy",
+     "exchange": "SET",
+     "cap": 45913.0
+    },
+    {
+     "qaid": "@GULFD3",
+     "ticker": "GULF TB Equity",
+     "name": "Gulf Development PCL",
+     "iso2": "TH",
+     "country": "Thailand",
+     "region": "AP",
+     "gsector": "utilities",
+     "gindustry": "utilities",
+     "exchange": "SET",
+     "cap": 41214.0
+    },
+    {
+     "qaid": "@AIRPO2",
+     "ticker": "AOT TB Equity",
+     "name": "Airports of Thailand PCL",
+     "iso2": "TH",
+     "country": "Thailand",
+     "region": "AP",
+     "gsector": "industrials",
+     "gindustry": "transport",
+     "exchange": "SET",
+     "cap": 39875.0
+    }
+   ],
+   "PE": [
+    {
+     "qaid": "PCU",
+     "ticker": "SCCO UN Equity",
+     "name": "Southern Copper Corp",
+     "iso2": "PE",
+     "country": "Peru",
+     "region": "EE",
+     "gsector": "materials",
+     "gindustry": "materials",
+     "exchange": "NYS",
+     "cap": 206776.0
+    },
+    {
+     "qaid": "BAP",
+     "ticker": "BAP UN Equity",
+     "name": "Credicorp Ltd",
+     "iso2": "PE",
+     "country": "Peru",
+     "region": "EE",
+     "gsector": "financials",
+     "gindustry": "banks",
+     "exchange": "NYS",
+     "cap": 44736.0
+    }
+   ],
+   "IE": [
+    {
+     "qaid": "@RYANA3",
+     "ticker": "RYA ID Equity",
+     "name": "Ryanair Holdings PLC",
+     "iso2": "IE",
+     "country": "Ireland",
+     "region": "EU",
+     "gsector": "industrials",
+     "gindustry": "transport",
+     "exchange": "ISE",
+     "cap": 46217.0
+    },
+    {
+     "qaid": "@ALLIE55",
+     "ticker": "AIBG ID Equity",
+     "name": "AIB Group PLC",
+     "iso2": "IE",
+     "country": "Ireland",
+     "region": "EU",
+     "gsector": "financials",
+     "gindustry": "banks",
+     "exchange": "ISE",
+     "cap": 35730.0
+    },
+    {
+     "qaid": "@BKOFI9",
+     "ticker": "BIRG ID Equity",
+     "name": "Bank of Ireland Group PLC",
+     "iso2": "IE",
+     "country": "Ireland",
+     "region": "EU",
+     "gsector": "financials",
+     "gindustry": "banks",
+     "exchange": "ISE",
+     "cap": 26942.0
+    },
+    {
+     "qaid": "@KINGS24",
+     "ticker": "KSP ID Equity",
+     "name": "Kingspan Group PLC",
+     "iso2": "IE",
+     "country": "Ireland",
+     "region": "EU",
+     "gsector": "industrials",
+     "gindustry": "capital_goods",
+     "exchange": "ISE",
+     "cap": 24268.0
+    },
+    {
+     "qaid": "@KERRY5",
+     "ticker": "KYGA ID Equity",
+     "name": "Kerry Group PLC",
+     "iso2": "IE",
+     "country": "Ireland",
+     "region": "EU",
+     "gsector": "consumer_staples",
+     "gindustry": "food_bev_tobacco",
+     "exchange": "ISE",
+     "cap": 21973.0
+    }
+   ],
+   "NO": [
+    {
+     "qaid": "@STATO1",
+     "ticker": "EQNR NO Equity",
+     "name": "Equinor ASA",
+     "iso2": "NO",
+     "country": "Norway",
+     "region": "EU",
+     "gsector": "energy",
+     "gindustry": "energy",
+     "exchange": "OSL",
+     "cap": 119123.0
+    },
+    {
+     "qaid": "@DNBNO1",
+     "ticker": "DNB NO Equity",
+     "name": "DNB Bank ASA",
+     "iso2": "NO",
+     "country": "Norway",
+     "region": "EU",
+     "gsector": "financials",
+     "gindustry": "banks",
+     "exchange": "OSL",
+     "cap": 62776.0
+    },
+    {
+     "qaid": "@KONGS3",
+     "ticker": "KOG NO Equity",
+     "name": "Kongsberg Gruppen ASA",
+     "iso2": "NO",
+     "country": "Norway",
+     "region": "EU",
+     "gsector": "industrials",
+     "gindustry": "capital_goods",
+     "exchange": "OSL",
+     "cap": 42256.0
+    },
+    {
+     "qaid": "@TELEN24",
+     "ticker": "TEL NO Equity",
+     "name": "Telenor ASA",
+     "iso2": "NO",
+     "country": "Norway",
+     "region": "EU",
+     "gsector": "communication_services",
+     "gindustry": "telecom",
+     "exchange": "OSL",
+     "cap": 28490.0
+    },
+    {
+     "qaid": "@AKERE1",
+     "ticker": "AKRBP NO Equity",
+     "name": "Aker BP ASA",
+     "iso2": "NO",
+     "country": "Norway",
+     "region": "EU",
+     "gsector": "energy",
+     "gindustry": "energy",
+     "exchange": "OSL",
+     "cap": 28178.0
+    }
+   ],
+   "MY": [
+    {
+     "qaid": "@MALAY37",
+     "ticker": "MAY MK Equity",
+     "name": "Malayan Banking Bhd",
+     "iso2": "MY",
+     "country": "Malaysia",
+     "region": "AP",
+     "gsector": "financials",
+     "gindustry": "banks",
+     "exchange": "KLS",
+     "cap": 46232.0
+    },
+    {
+     "qaid": "@PUBLI36",
+     "ticker": "PBK MK Equity",
+     "name": "Public Bank Bhd",
+     "iso2": "MY",
+     "country": "Malaysia",
+     "region": "AP",
+     "gsector": "financials",
+     "gindustry": "banks",
+     "exchange": "KLS",
+     "cap": 33593.0
+    },
+    {
+     "qaid": "@TENAG2",
+     "ticker": "TNB MK Equity",
+     "name": "Tenaga Nasional Bhd",
+     "iso2": "MY",
+     "country": "Malaysia",
+     "region": "AP",
+     "gsector": "utilities",
+     "gindustry": "utilities",
+     "exchange": "KLS",
+     "cap": 29460.0
+    },
+    {
+     "qaid": "@COMME122",
+     "ticker": "CIMB MK Equity",
+     "name": "CIMB Group Holdings Bhd",
+     "iso2": "MY",
+     "country": "Malaysia",
+     "region": "AP",
+     "gsector": "financials",
+     "gindustry": "banks",
+     "exchange": "KLS",
+     "cap": 29072.0
+    },
+    {
+     "qaid": "@IHHHE2",
+     "ticker": "IHH MK Equity",
+     "name": "IHH Healthcare Bhd",
+     "iso2": "MY",
+     "country": "Malaysia",
+     "region": "AP",
+     "gsector": "health_care",
+     "gindustry": "hc_equip_services",
+     "exchange": "KLS",
+     "cap": 25487.0
+    }
+   ],
+   "ID": [
+    {
+     "qaid": "@BKCEN2",
+     "ticker": "BBCA IJ Equity",
+     "name": "Bank Central Asia Tbk PT",
+     "iso2": "ID",
+     "country": "Indonesia",
+     "region": "AP",
+     "gsector": "financials",
+     "gindustry": "banks",
+     "exchange": "JKT",
+     "cap": 59267.0
+    },
+    {
+     "qaid": "@BKRAK1",
+     "ticker": "BBRI IJ Equity",
+     "name": "Bank Rakyat Indonesia (Persero) Tbk PT",
+     "iso2": "ID",
+     "country": "Indonesia",
+     "region": "AP",
+     "gsector": "financials",
+     "gindustry": "banks",
+     "exchange": "JKT",
+     "cap": 32639.0
+    },
+    {
+     "qaid": "@BKMAN1",
+     "ticker": "BMRI IJ Equity",
+     "name": "Bank Mandiri (Persero) Tbk PT",
+     "iso2": "ID",
+     "country": "Indonesia",
+     "region": "AP",
+     "gsector": "financials",
+     "gindustry": "banks",
+     "exchange": "JKT",
+     "cap": 29741.0
+    },
+    {
+     "qaid": "@TELEK12",
+     "ticker": "TLKM IJ Equity",
+     "name": "Telkom Indonesia (Persero) Tbk PT",
+     "iso2": "ID",
+     "country": "Indonesia",
+     "region": "AP",
+     "gsector": "communication_services",
+     "gindustry": "telecom",
+     "exchange": "JKT",
+     "cap": 20038.0
+    },
+    {
+     "qaid": "@ASTRA49",
+     "ticker": "ASII IJ Equity",
+     "name": "Astra International Tbk PT",
+     "iso2": "ID",
+     "country": "Indonesia",
+     "region": "AP",
+     "gsector": "industrials",
+     "gindustry": "capital_goods",
+     "exchange": "JKT",
+     "cap": 15630.0
+    }
+   ],
+   "PT": [
+    {
+     "qaid": "@ELECD5",
+     "ticker": "EDP PL Equity",
+     "name": "EDP SA",
+     "iso2": "PT",
+     "country": "Portugal",
+     "region": "EU",
+     "gsector": "utilities",
+     "gindustry": "utilities",
+     "exchange": "LIS",
+     "cap": 32315.0
+    },
+    {
+     "qaid": "@BCOCO16",
+     "ticker": "BCP PL Equity",
+     "name": "Banco Comercial Portugues SA",
+     "iso2": "PT",
+     "country": "Portugal",
+     "region": "EU",
+     "gsector": "financials",
+     "gindustry": "banks",
+     "exchange": "LIS",
+     "cap": 26177.0
+    },
+    {
+     "qaid": "@EDPRE1",
+     "ticker": "EDPR PL Equity",
+     "name": "Edp Renewables SA",
+     "iso2": "PT",
+     "country": "Portugal",
+     "region": "EU",
+     "gsector": "utilities",
+     "gindustry": "utilities",
+     "exchange": "LIS",
+     "cap": 25093.0
+    },
+    {
+     "qaid": "@GALPE1",
+     "ticker": "GALP PL Equity",
+     "name": "Galp Energia SGPS SA",
+     "iso2": "PT",
+     "country": "Portugal",
+     "region": "EU",
+     "gsector": "energy",
+     "gindustry": "energy",
+     "exchange": "LIS",
+     "cap": 21218.0
+    },
+    {
+     "qaid": "@JERON4",
+     "ticker": "JMT PL Equity",
+     "name": "Jeronimo Martins SGPS SA",
+     "iso2": "PT",
+     "country": "Portugal",
+     "region": "EU",
+     "gsector": "consumer_staples",
+     "gindustry": "cs_retail",
+     "exchange": "LIS",
+     "cap": 17214.0
+    }
+   ],
+   "PH": [
+    {
+     "qaid": "@INTLC17",
+     "ticker": "ICT PM Equity",
+     "name": "International Container Terminal Services Inc",
+     "iso2": "PH",
+     "country": "Philippines",
+     "region": "AP",
+     "gsector": "industrials",
+     "gindustry": "transport",
+     "exchange": "PHS",
+     "cap": 43261.0
+    },
+    {
+     "qaid": "@SMINV1",
+     "ticker": "SM PM Equity",
+     "name": "SM Investments Corp",
+     "iso2": "PH",
+     "country": "Philippines",
+     "region": "AP",
+     "gsector": "industrials",
+     "gindustry": "capital_goods",
+     "exchange": "PHS",
+     "cap": 16975.0
+    },
+    {
+     "qaid": "@BCODE64",
+     "ticker": "BDO PM Equity",
+     "name": "BDO Unibank Inc",
+     "iso2": "PH",
+     "country": "Philippines",
+     "region": "AP",
+     "gsector": "financials",
+     "gindustry": "banks",
+     "exchange": "PHS",
+     "cap": 15461.0
+    },
+    {
+     "qaid": "@MANIL9",
+     "ticker": "MER PM Equity",
+     "name": "Manila Electric Co",
+     "iso2": "PH",
+     "country": "Philippines",
+     "region": "AP",
+     "gsector": "utilities",
+     "gindustry": "utilities",
+     "exchange": "PHS",
+     "cap": 15208.0
+    },
+    {
+     "qaid": "@BKOFP3",
+     "ticker": "BPI PM Equity",
+     "name": "Bank of the Philippine Islands",
+     "iso2": "PH",
+     "country": "Philippines",
+     "region": "AP",
+     "gsector": "financials",
+     "gindustry": "banks",
+     "exchange": "PHS",
+     "cap": 12553.0
+    }
+   ],
+   "NZ": [
+    {
+     "qaid": "@FISHE11",
+     "ticker": "FPH NZ Equity",
+     "name": "Fisher & Paykel Healthcare Corporation Ltd",
+     "iso2": "NZ",
+     "country": "New Zealand",
+     "region": "AP",
+     "gsector": "health_care",
+     "gindustry": "hc_equip_services",
+     "exchange": "NZC",
+     "cap": 19188.0
+    },
+    {
+     "qaid": "@INFRA14",
+     "ticker": "IFT NZ Equity",
+     "name": "Infratil Ltd",
+     "iso2": "NZ",
+     "country": "New Zealand",
+     "region": "AP",
+     "gsector": "financials",
+     "gindustry": "financial_services",
+     "exchange": "NZC",
+     "cap": 12467.0
+    },
+    {
+     "qaid": "@MERID36",
+     "ticker": "MEL NZ Equity",
+     "name": "Meridian Energy Ltd",
+     "iso2": "NZ",
+     "country": "New Zealand",
+     "region": "AP",
+     "gsector": "utilities",
+     "gindustry": "utilities",
+     "exchange": "NZC",
+     "cap": 12312.0
+    },
+    {
+     "qaid": "@AUCKL5",
+     "ticker": "AIA NZ Equity",
+     "name": "Auckland International Airport Ltd",
+     "iso2": "NZ",
+     "country": "New Zealand",
+     "region": "AP",
+     "gsector": "industrials",
+     "gindustry": "transport",
+     "exchange": "NZC",
+     "cap": 12029.0
+    },
+    {
+     "qaid": "@CONTA3",
+     "ticker": "CEN NZ Equity",
+     "name": "Contact Energy Ltd",
+     "iso2": "NZ",
+     "country": "New Zealand",
+     "region": "AP",
+     "gsector": "utilities",
+     "gindustry": "utilities",
+     "exchange": "NZC",
+     "cap": 8166.0
+    }
+   ]
+  }
+ }
+}

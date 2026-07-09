@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#F1F0F6">
+<title>BOURSE · market recall</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><text y='20' font-size='20'>📈</text></svg>">
+<link rel="stylesheet" href="./styles/tokens.css">
+<link rel="stylesheet" href="./styles/base.css">
+<link rel="stylesheet" href="./styles/components.css">
+<link rel="stylesheet" href="./styles/screens.css">
+<link rel="stylesheet" href="./styles/additions.css">
+</head>
+<body>
+<div id="bg"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div>
+<div id="boot"><div class="logo"><svg viewBox="0 0 24 24"><path d="M3 17l5-6 4 4 6-8"/><path d="M17 7h4v4"/></svg></div><div class="txt">loading universe…</div></div>
+<div id="app">
+  <header>
+    <div class="brand"><div class="logo" id="brandLogo"><svg viewBox="0 0 24 24"><path d="M3 17l5-6 4 4 6-8"/><path d="M17 7h4v4"/></svg></div><div class="name">BOUR<em>SE</em></div></div>
+    <div class="hchip"><span id="fireEmoji">🔥</span><span id="dayStreak">0 day streak</span></div>
+  </header>
+
+  <main>
+    <!-- ============ HOME ============ -->
+    <section class="screen active" id="home">
+      <div class="home-head">
+        <div class="eyebrow">market recall</div>
+        <div class="greet"><h1 class="h-title" id="greetLine">Ready to drill?</h1></div>
+      </div>
+      <div class="qotd press" id="qotdCard" onclick="app.questionOfDay()">
+        <div class="k">Question of the day</div>
+        <div class="q" id="qotdQ">…</div>
+        <div class="cta">Take the shot →</div>
+      </div>
+      <div class="strip" id="statStrip"></div>
+      <div class="sec-label"><h2>Choose a mode</h2>
+        <button class="surprise press" onclick="app.surprise()">🎲 Surprise me</button></div>
+      <div class="mode-grid" id="modeGrid"></div>
+    </section>
+
+    <!-- ============ CONFIG ============ -->
+    <section class="screen" id="config">
+      <button class="back press" onclick="app.go('home')"><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>Modes</button>
+      <div class="eyebrow" id="cfgEye">mode</div>
+      <h1 class="h-title" id="cfgTitle" style="margin:4px 0 4px"></h1>
+      <p class="sub" id="cfgSub" style="margin-bottom:20px"></p>
+      <div id="cfgBody"></div>
+
+      <div class="field" id="styleField">
+        <label>Answer style</label>
+        <div class="seg brand" id="styleSeg"></div>
+        <div class="hint" id="styleHint"></div>
+      </div>
+
+      <div class="field">
+        <label>Session length</label>
+        <div class="seg len-seg" id="lenSeg">
+          <button data-n="5" class="on"><span class="cnt">5</span><span class="u">quick</span></button>
+          <button data-n="10"><span class="cnt">10</span><span class="u">standard</span></button>
+          <button data-n="20"><span class="cnt">20</span><span class="u">deep</span></button>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Options</label>
+        <div class="toggle-row"><div><div class="t">Unseen only</div><div class="d">Skip cards you've already drilled in this mode</div></div><div class="toggle" data-opt="unseen" onclick="app.tgl(this)"><i></i></div></div>
+        <div class="toggle-row"><div><div class="t">Shuffle</div><div class="d">Randomise question &amp; option order</div></div><div class="toggle on" data-opt="shuffle" onclick="app.tgl(this)"><i></i></div></div>
+        <div class="toggle-row"><div><div class="t">Timed mode</div><div class="d">15s per question, counts down</div></div><div class="toggle" data-opt="timed" onclick="app.tgl(this)"><i></i></div></div>
+        <div class="toggle-row"><div><div class="t">Reveal at end</div><div class="d">Off = instant feedback each question</div></div><div class="toggle" data-opt="revealEnd" onclick="app.tgl(this)"><i></i></div></div>
+      </div>
+
+      <button class="start press" onclick="app.startQuiz()">Start drill <span class="kbd">↵</span></button>
+    </section>
+
+    <!-- ============ RUNNER ============ -->
+    <section class="screen" id="runner">
+      <div class="run-top">
+        <div class="ring-mini">
+          <svg width="42" height="42" viewBox="0 0 42 42"><circle cx="21" cy="21" r="17" fill="none" stroke="var(--surface-2)" stroke-width="4"/><circle id="runRing" cx="21" cy="21" r="17" fill="none" stroke="var(--accent)" stroke-width="4" stroke-linecap="round" stroke-dasharray="107" stroke-dashoffset="107"/></svg>
+          <div class="lbl" id="runRingLbl">1</div>
+        </div>
+        <div class="run-meta"><div class="qc"><b id="qNow">1</b> of <span id="qTotal">5</span></div><div class="tag" id="runTag">multiple choice</div></div>
+        <div class="streak" id="streakBox"><span>🔥</span><span id="streakN">0</span></div>
+        <button class="xbtn press" onclick="app.showKb()" title="shortcuts"><svg viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M7 14h10"/></svg></button>
+        <button class="xbtn press" onclick="app.confirmExit()"><svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+      </div>
+      <div class="timerbar" id="timerbar"><i id="timerFill" style="width:100%"></i></div>
+
+      <div class="prompt" id="promptCard"></div>
+      <div id="answerZone"></div>
+
+      <button class="next brand press" id="nextBtn" onclick="app.next()">Next <span class="kbd">↵</span></button>
+      <div class="postmark" id="postmark">
+        <button onclick="app.retry()">↺ Retry</button>
+        <button class="mc" onclick="app.markCorrect()">✓ Mark correct</button>
+      </div>
+
+      <div class="action-bar">
+        <button class="ab press" id="abPrev" onclick="app.prev()"><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>Prev</button>
+        <button class="ab press" id="abFlag" onclick="app.toggleFlag()"><svg viewBox="0 0 24 24"><path d="M4 21V4h13l-2 4 2 4H4"/></svg>Flag</button>
+        <button class="ab press" id="abHint" onclick="app.hint()"><svg viewBox="0 0 24 24"><path d="M9 18h6M10 22h4M12 2a7 7 0 00-4 12c.7.7 1 1.4 1 2h6c0-.6.3-1.3 1-2a7 7 0 00-4-12z"/></svg>Hint</button>
+        <button class="ab press" id="abSkip" onclick="app.skip()"><svg viewBox="0 0 24 24"><path d="M5 4l10 8-10 8V4zM19 5v14"/></svg>Skip</button>
+      </div>
+    </section>
+
+    <!-- ============ BUSINESS DESC BROWSER ============ -->
+    <section class="screen" id="browser">
+      <button class="back press" onclick="app.go('home')"><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>Modes</button>
+      <div class="eyebrow">business descriptions</div>
+      <h1 class="h-title" style="margin:4px 0 14px">Company profiles</h1>
+      <div class="seg brand bd-modeseg" id="bdModeSeg">
+        <button data-m="browse" class="on">Browse &amp; read</button>
+        <button data-m="shuffle">Guess mode</button>
+      </div>
+      <div id="bdBrowse">
+        <div class="bd-search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg><input id="bdSearchInput" placeholder="Search name or ticker…"></div>
+        <div class="filter-groups" id="bdFilters"></div>
+        <div class="bd-grid" id="bdGrid"></div>
+      </div>
+      <div id="bdShuffle" style="display:none"></div>
+    </section>
+
+    <!-- ============ SUMMARY ============ -->
+    <section class="screen" id="summary">
+      <div class="summary">
+        <div class="sum-ring"><svg width="158" height="158" viewBox="0 0 158 158"><circle cx="79" cy="79" r="69" fill="none" stroke="var(--surface-2)" stroke-width="13"/><circle id="sumRing" cx="79" cy="79" r="69" fill="none" stroke="var(--accent)" stroke-width="13" stroke-linecap="round" stroke-dasharray="434" stroke-dashoffset="434"/></svg><div class="pct" id="sumPct">0%</div></div>
+        <h2 id="sumHead">Nice drill.</h2>
+        <div class="line" id="sumLine"></div>
+        <div class="insight" id="sumInsight"></div>
+        <div class="brkdn" id="sumBrkdn"></div>
+        <div class="missed" id="missedBox"></div>
+        <div class="actions">
+          <button class="btn-primary press" onclick="app.reviewWrong()">Review the misses</button>
+          <button class="btn-ghost press" onclick="app.go('config')">New session</button>
+          <button class="btn-ghost press" onclick="app.go('home')">Back home</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ STATS ============ -->
+    <section class="screen" id="stats">
+      <div class="eyebrow">progress</div>
+      <h1 class="h-title" style="margin:4px 0 16px">Your recall</h1>
+      <div class="stat-hero">
+        <div class="big" id="ovAcc">0<span>%</span></div>
+        <div class="subl">overall accuracy · all modes</div>
+        <div class="row">
+          <div><div class="n" id="ovSeen">0</div><div class="l">cards seen</div></div>
+          <div><div class="n" id="ovStreak">0</div><div class="l">best streak</div></div>
+          <div><div class="n" id="ovSess">0</div><div class="l">sessions</div></div>
+          <div><div class="n" id="ovTime">0s</div><div class="l">avg / q</div></div>
+        </div>
+      </div>
+      <div class="panel"><div class="ph"><h4>7-day activity</h4></div><div class="week" id="weekRow"></div></div>
+      <div class="panel"><div class="ph"><h4>By mode</h4></div><div id="modeStats"></div></div>
+    </section>
+
+    <!-- ============ SETTINGS ============ -->
+    <section class="screen" id="settings"></section>
+  </main>
+
+  <nav>
+    <button class="tab on" data-tab="home" onclick="app.go('home')"><svg viewBox="0 0 24 24"><path d="M3 11l9-8 9 8M5 10v10h14V10"/></svg>Home<span class="pipdot"></span></button>
+    <button class="tab" data-tab="stats" onclick="app.go('stats')"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>Stats<span class="pipdot"></span></button>
+    <button class="tab" data-tab="settings" onclick="app.go('settings')"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.6 1.6 0 00.3 1.8l.1.1a2 2 0 11-2.8 2.8l-.1-.1a1.6 1.6 0 00-2.7 1.1V21a2 2 0 01-4 0v-.1A1.6 1.6 0 007 19.4l-.1.1a2 2 0 11-2.8-2.8l.1-.1a1.6 1.6 0 00-1.1-2.7H3a2 2 0 010-4h.1A1.6 1.6 0 004.6 7l-.1-.1a2 2 0 112.8-2.8l.1.1a1.6 1.6 0 001.8.3H9.3A1.6 1.6 0 0010 3.6V3a2 2 0 014 0v.1a1.6 1.6 0 002.7 1.1l.1-.1a2 2 0 112.8 2.8l-.1.1a1.6 1.6 0 00-.3 1.8V9.3a1.6 1.6 0 001.5 1H21a2 2 0 010 4h-.1a1.6 1.6 0 00-1.5 1z"/></svg>Settings<span class="pipdot"></span></button>
+  </nav>
+
+  <div class="kbcheat" id="kbcheat" onclick="if(event.target===this)app.hideKb()">
+    <div class="panel">
+      <h3>Keyboard &amp; taps</h3>
+      <div class="kbrow"><span>Pick answer</span><span class="keys"><kbd>1</kbd><kbd>2</kbd><kbd>3</kbd><kbd>4</kbd> / <kbd>A</kbd>–<kbd>D</kbd></span></div>
+      <div class="kbrow"><span>True / False</span><span class="keys"><kbd>T</kbd><kbd>F</kbd></span></div>
+      <div class="kbrow"><span>Flip card</span><span class="keys"><kbd>Space</kbd></span></div>
+      <div class="kbrow"><span>Submit / Next</span><span class="keys"><kbd>Enter</kbd></span></div>
+      <div class="kbrow"><span>Prev / Next question</span><span class="keys"><kbd>Alt</kbd>+<kbd>←</kbd><kbd>→</kbd></span></div>
+      <button class="s-close" style="margin-top:16px" onclick="app.hideKb()">Got it</button>
+    </div>
+  </div>
+
+  <div class="sheet-scrim" id="sheetScrim" onclick="if(event.target===this)app.closeSheet()">
+    <div class="sheet" id="sheetBody"></div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <canvas class="confetti-canvas" id="confetti" style="display:none"></canvas>
+</div>
+
+<script src="./vendor/papaparse.min.js"></script>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>

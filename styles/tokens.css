@@ -1,0 +1,14 @@
+/* tokens.css — design tokens (ported verbatim from sketch v2) */
+:root{
+  --bg:#F1F0F6;--surface:#FFFFFF;--surface-2:#F7F6FC;
+  --ink:#191527;--ink-soft:#524E63;--ink-mute:#918DA1;--line:#E7E4F0;--line-2:#EFEDF6;
+  --accent:#7C5CFF;--accent-ink:#FFFFFF;--accent-soft:#EFEBFF;
+  --good:#12B886;--good-soft:#E3F9F0;--bad:#FA5252;--bad-soft:#FDECEC;--warn:#F59F00;--warn-soft:#FEF3E0;
+  --s-tech:#6366F1;--s-fin:#12B886;--s-enr:#F59E0B;--s-hc:#F43F5E;--s-mat:#B45309;--s-cd:#8B5CF6;
+  --s-cs:#14B8A6;--s-comm:#0EA5E9;--s-ind:#475569;--s-util:#06B6D4;--s-re:#EC4899;
+  --font:"SF Pro Rounded",ui-rounded,"Nunito",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,system-ui,sans-serif;
+  --mono:"SF Mono",ui-monospace,"Roboto Mono",Menlo,Consolas,monospace;
+  --fs:1;--r-blob:32px;--r-card:22px;--r-pill:999px;
+  --sh-1:0 1px 2px rgba(25,21,39,.05);--sh-2:0 4px 14px -6px rgba(25,21,39,.14);--sh-3:0 18px 40px -18px rgba(25,21,39,.28);
+  --ease:cubic-bezier(.22,.72,.26,1);
+}

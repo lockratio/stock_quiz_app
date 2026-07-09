@@ -1,0 +1,22 @@
+/* additions.css — new components not present in the sketch (same design language) */
+
+/* leaderboard single-box: red flash + shake on an unmatched guess */
+.typein input.bad { border-color: var(--bad); background: var(--bad-soft); animation: shake .4s; }
+
+/* industry emoji inside the coloured sector badges */
+.secdot .ind-emoji { font-size: 18px; line-height: 1; }
+.s-ico .s-ico-emoji { font-size: 24px; line-height: 1; }
+.mode-card .ico, .msico { overflow: hidden; }
+
+/* description detail sheet — bold sectioned fields, scrollable summary */
+.s-sections { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 16px; margin-bottom: 16px; }
+.s-field .s-flabel { font-family: var(--mono); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-mute); font-weight: 700; margin-bottom: 3px; }
+.s-field .s-fval { font-size: 14.5px; font-weight: 700; color: var(--ink); }
+.sheet .s-desc { max-height: 40vh; overflow-y: auto; -webkit-overflow-scrolling: touch; }
+
+/* keep the ID-card / flashcard big front from overflowing narrow screens */
+.prompt .q.big { overflow-wrap: anywhere; }
+
+@media (max-width: 380px) {
+  .s-sections { grid-template-columns: 1fr; }
+}
