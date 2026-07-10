@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#F1F0F6">
-<title>BOURSE · market recall</title>
+<title>LockRatio · market recall</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><text y='20' font-size='20'>📈</text></svg>">
 <link rel="stylesheet" href="./styles/tokens.css">
 <link rel="stylesheet" href="./styles/base.css">
@@ -17,7 +17,7 @@
 <div id="boot"><div class="logo"><svg viewBox="0 0 24 24"><path d="M3 17l5-6 4 4 6-8"/><path d="M17 7h4v4"/></svg></div><div class="txt">loading universe…</div></div>
 <div id="app">
   <header>
-    <div class="brand"><div class="logo" id="brandLogo"><svg viewBox="0 0 24 24"><path d="M3 17l5-6 4 4 6-8"/><path d="M17 7h4v4"/></svg></div><div class="name">BOUR<em>SE</em></div></div>
+    <a class="brand" href="#" onclick="app.go('home');return false;"><img class="brand-logo" src="./assets/brand/lockratio_wide_black.png" alt="LockRatio"></a>
     <div class="hchip"><span id="fireEmoji">🔥</span><span id="dayStreak">0 day streak</span></div>
   </header>
 
@@ -46,31 +46,7 @@
       <h1 class="h-title" id="cfgTitle" style="margin:4px 0 4px"></h1>
       <p class="sub" id="cfgSub" style="margin-bottom:20px"></p>
       <div id="cfgBody"></div>
-
-      <div class="field" id="styleField">
-        <label>Answer style</label>
-        <div class="seg brand" id="styleSeg"></div>
-        <div class="hint" id="styleHint"></div>
-      </div>
-
-      <div class="field">
-        <label>Session length</label>
-        <div class="seg len-seg" id="lenSeg">
-          <button data-n="5" class="on"><span class="cnt">5</span><span class="u">quick</span></button>
-          <button data-n="10"><span class="cnt">10</span><span class="u">standard</span></button>
-          <button data-n="20"><span class="cnt">20</span><span class="u">deep</span></button>
-        </div>
-      </div>
-
-      <div class="field">
-        <label>Options</label>
-        <div class="toggle-row"><div><div class="t">Unseen only</div><div class="d">Skip cards you've already drilled in this mode</div></div><div class="toggle" data-opt="unseen" onclick="app.tgl(this)"><i></i></div></div>
-        <div class="toggle-row"><div><div class="t">Shuffle</div><div class="d">Randomise question &amp; option order</div></div><div class="toggle on" data-opt="shuffle" onclick="app.tgl(this)"><i></i></div></div>
-        <div class="toggle-row"><div><div class="t">Timed mode</div><div class="d">15s per question, counts down</div></div><div class="toggle" data-opt="timed" onclick="app.tgl(this)"><i></i></div></div>
-        <div class="toggle-row"><div><div class="t">Reveal at end</div><div class="d">Off = instant feedback each question</div></div><div class="toggle" data-opt="revealEnd" onclick="app.tgl(this)"><i></i></div></div>
-      </div>
-
-      <button class="start press" onclick="app.startQuiz()">Start drill <span class="kbd">↵</span></button>
+      <button class="start" id="startBtn" onclick="app.startQuiz()">Start quiz →</button>
     </section>
 
     <!-- ============ RUNNER ============ -->

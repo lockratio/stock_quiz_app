@@ -46,3 +46,21 @@ export const STYLE_HINT = {
   type: 'Fuzzy graded; a miss shows how close you were.',
   flip: 'No input — flip and self-grade.',
 };
+
+// ---------------------------------------------------------------------------
+// Unified quiz model (Wave 4). One quiz mixes several TYPES; each type carries
+// the answer styles it supports (leaderboard/desc self-render, so styles []).
+// Chip order is fixed: leaderboard, idcard, facts, flash, desc. icon/col reuse
+// the per-mode MODES entry so config chips match the rest of the UI.
+// ---------------------------------------------------------------------------
+export const QUIZ_TYPES = [
+  { key: 'leaderboard', label: 'Leaderboard',    icon: MODES.leaderboard.icon, col: MODES.leaderboard.col, styles: [] },
+  { key: 'idcard',      label: 'Stock Universe', icon: MODES.idcard.icon,      col: MODES.idcard.col,      styles: ['mc', 'type', 'flip'] },
+  { key: 'facts',       label: 'Universe Facts', icon: MODES.facts.icon,       col: MODES.facts.col,       styles: ['mc', 'tf', 'type', 'flip'] },
+  { key: 'flash',       label: 'Flashcards',     icon: MODES.flash.icon,       col: MODES.flash.col,       styles: ['mc', 'type', 'flip'] },
+  { key: 'desc',        label: 'Descriptions',   icon: MODES.desc.icon,        col: MODES.desc.col,        styles: [] },
+];
+
+// key -> supported answer styles (the runner uses this to pick a render and to
+// fall back to 'mc' when app.style isn't supported by the current item's type).
+export const QUIZ_TYPE_STYLES = QUIZ_TYPES.reduce((m, t) => (m[t.key] = t.styles, m), {});

@@ -40,3 +40,39 @@ export function bestMatch(query, candidates, keyFns, threshold = 0.9) {
   }
   return { item: best, score: bestScore, matched: bestScore >= threshold };
 }
+
+/**
+ * Ranked suggestions for a type-ahead dropdown (Wave 2).
+ * Scores each row by max(dice(query, name), dice(query, symbol)); a normalized
+ * prefix match on either name or symbol gets a strong boost so exact-start
+ * candidates surface first. Returns [] until the query has 2+ chars.
+ * @returns up to `limit` unique (by qaid) { label, symbol, qaid }, best first.
+ */
+export function suggest(query, rows, { limit = 5 } = {}) {
+  const q = (query || '').trim();
+  if (q.length < 2) return [];
+  const nq = normz(q);
+
+  const scored = [];
+  for (const r of rows || []) {
+    const name = r.name || '';
+    const symbol = r.symbol || '';
+    let score = Math.max(dice(q, name), dice(q, symbol));
+    if (nq && (normz(name).startsWith(nq) || normz(symbol).startsWith(nq))) {
+      score = Math.max(score, 0.95) + 0.5;       // strong prefix boost
+    }
+    if (score > 0) scored.push({ r, score });
+  }
+
+  scored.sort((a, b) => b.score - a.score);
+
+  const out = [], seen = new Set();
+  for (const { r } of scored) {
+    const key = r.qaid != null ? r.qaid : r.name;
+    if (key == null || seen.has(key)) continue;
+    seen.add(key);
+    out.push({ label: r.name, symbol: r.symbol, qaid: r.qaid });
+    if (out.length >= limit) break;
+  }
+  return out;
+}

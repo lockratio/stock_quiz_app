@@ -5,14 +5,17 @@
 
 import { $, el, haptic, toast } from '../lib/dom.js';
 import { store } from '../state/store.js';
-import { nice, capBucketShort, fmtCap } from '../data/schema.js';
+import { nice, fmtCap } from '../data/schema.js';
 import { loadUniverse, getUniverse, getReference } from '../data/loader.js';
 import { sectorOf, industryEmoji } from '../lib/icons.js';
 import { flagOf, flagName } from '../lib/fx.js';
-import { shuffle } from '../data/query.js';
+import { shuffle, filter, topN, countBy } from '../data/query.js';
+import { maskIdentity } from '../lib/mask.js';
 
+// Browse state. `view` is the top-level consolidated view (stocks|countries|
+// industries|leaders); `sub` is the stocks-only browse/guess sub-mode.
 function state(app) {
-  return (app._bd ||= { view: 'browse', search: '',
+  return (app._bd ||= { view: 'stocks', sub: 'browse', search: '',
     filters: { gsector: new Set(), region: new Set(), iso2: new Set(), gindustry: new Set() } });
 }
 
@@ -30,17 +33,99 @@ function applyFilters(app) {
 
 export async function openBrowser(app) {
   const bd = state(app);
-  bd.view = 'browse';
-  $$seg('browse');
-  $('#bdBrowse').style.display = 'block';
-  $('#bdShuffle').style.display = 'none';
+  bd.view = bd.view || 'stocks';
+  bd.sub = bd.sub || 'browse';
+  buildViewSeg(app);
+  // Fallback dispatcher so the runtime (main.js) can delegate app.browseView(v)
+  // straight into this renderer; if main.js already defines it, that wins.
+  if (typeof app.browseView !== 'function') app.browseView = v => setView(app, v);
   $('#bdGrid').innerHTML = '<div class="bd-empty">Loading universe…</div>';
   try { await loadUniverse(); } catch { $('#bdGrid').innerHTML = '<div class="bd-empty">Data failed to load.</div>'; return; }
   buildFilters(app);
   const input = $('#bdSearchInput');
   input.oninput = () => { bd.search = input.value; renderGrid(app); };
-  renderGrid(app);
   wireSeg(app);
+  showView(app);
+  refreshCurrent(app);
+}
+
+// ---- consolidated view segment (stocks | countries | industries | leaders) ----
+const VIEWS = [['stocks', 'Stocks'], ['countries', 'Countries'], ['industries', 'Industries'], ['leaders', 'Leaders']];
+
+// Build the 4-way view segment once, injected above the browse/guess sub-seg.
+function buildViewSeg(app) {
+  let seg = $('#bdViewSeg');
+  if (!seg) {
+    seg = el('div', 'seg brand bd-view-seg');
+    seg.id = 'bdViewSeg';
+    const anchor = $('#bdModeSeg');
+    anchor.parentNode.insertBefore(seg, anchor);
+  }
+  seg.innerHTML = '';
+  VIEWS.forEach(([v, label]) => {
+    const b = el('button', '', label);
+    b.dataset.v = v;
+    b.onclick = () => setView(app, v);
+    seg.appendChild(b);
+  });
+}
+
+// Public dispatcher — set the top-level view and re-render.
+export function browseView(app, v) { setView(app, v); }
+
+function setView(app, v) {
+  const bd = state(app);
+  bd.view = v;
+  showView(app);
+  refreshCurrent(app);
+}
+
+// Toggle DOM visibility for the active top-level view. Filters (#bdFilters, inside
+// #bdBrowse) stay visible in every view so the same chips scope all of them.
+function showView(app) {
+  const bd = state(app), stocks = bd.view === 'stocks';
+  document.querySelectorAll('#bdViewSeg button').forEach(b => b.classList.toggle('on', b.dataset.v === bd.view));
+  $('#bdModeSeg').style.display = stocks ? 'flex' : 'none';
+  const search = document.querySelector('#bdBrowse .bd-search');
+  const grid = $('#bdGrid'), list = listHost(app);
+  if (stocks) {
+    if (search) search.style.display = '';
+    grid.style.display = '';
+    list.style.display = 'none';
+    const guess = bd.sub === 'shuffle';
+    $('#bdBrowse').style.display = guess ? 'none' : 'block';
+    $('#bdShuffle').style.display = guess ? 'block' : 'none';
+    $$seg(bd.sub);
+  } else {
+    // list views reuse the browse container purely for its filter chips
+    $('#bdShuffle').style.display = 'none';
+    $('#bdBrowse').style.display = 'block';
+    if (search) search.style.display = 'none';
+    grid.style.display = 'none';
+    list.style.display = 'block';
+  }
+}
+
+// The shared container for the non-stocks list views, created once inside #bdBrowse.
+function listHost(app) {
+  let host = $('#bdListView');
+  if (!host) {
+    host = el('div', 'browse-list');
+    host.id = 'bdListView';
+    $('#bdBrowse').appendChild(host);
+  }
+  return host;
+}
+
+// Render whatever the current top-level view is (used by filter-chip changes too).
+function refreshCurrent(app) {
+  const bd = state(app);
+  switch (bd.view) {
+    case 'countries': return renderCountries(app);
+    case 'industries': return renderIndustries(app);
+    case 'leaders': return renderLeaders(app);
+    default: return bd.sub === 'shuffle' ? startGuess(app) : renderGrid(app);
+  }
 }
 
 function $$seg(m) {
@@ -48,10 +133,37 @@ function $$seg(m) {
 }
 function wireSeg(app) {
   document.querySelectorAll('#bdModeSeg button').forEach(b => b.onclick = () => {
-    const bd = state(app); bd.view = b.dataset.m; $$seg(b.dataset.m);
+    const bd = state(app); bd.sub = b.dataset.m; $$seg(b.dataset.m);
     if (b.dataset.m === 'browse') { $('#bdBrowse').style.display = 'block'; $('#bdShuffle').style.display = 'none'; renderGrid(app); }
     else { $('#bdBrowse').style.display = 'none'; $('#bdShuffle').style.display = 'block'; startGuess(app); }
   });
+}
+
+// ---- list views: countries / industries / leaders (all scoped to the filters) ----
+function renderCountries(app) {
+  const rows = applyFilters(app), host = listHost(app);
+  const counts = [...countBy(rows, 'iso2').entries()].sort((a, b) => b[1] - a[1]);
+  if (!counts.length) { host.innerHTML = '<div class="bd-empty">No matches. Loosen the filters.</div>'; return; }
+  host.innerHTML = counts.map(([iso2, n]) =>
+    `<div class="browse-row"><span class="br-lead">${flagName(iso2)}</span><span class="br-count">${n}</span></div>`).join('');
+}
+
+function renderIndustries(app) {
+  const rows = applyFilters(app), host = listHost(app);
+  const counts = [...countBy(rows, 'gindustry').entries()].sort((a, b) => b[1] - a[1]);
+  if (!counts.length) { host.innerHTML = '<div class="bd-empty">No matches. Loosen the filters.</div>'; return; }
+  host.innerHTML = counts.map(([key, n]) =>
+    `<div class="browse-row"><span class="br-lead"><span class="br-emoji">${industryEmoji(key)}</span>${nice(key)}</span><span class="br-count">${n}</span></div>`).join('');
+}
+
+function renderLeaders(app) {
+  const rows = applyFilters(app), host = listHost(app);
+  const top = topN(rows, 10);
+  if (!top.length) { host.innerHTML = '<div class="bd-empty">No ranked stocks match. Loosen the filters.</div>'; return; }
+  host.innerHTML = top.map((s, i) =>
+    `<div class="browse-row"><span class="br-rank">${i + 1}</span>` +
+    `<span class="br-lead">${flagOf(s.iso2)} ${s.name} <span class="br-sym">${s.symbol}</span></span>` +
+    `<span class="br-count">${fmtCap(s.capAUD)}</span></div>`).join('');
 }
 
 function buildFilters(app) {
@@ -72,7 +184,7 @@ function buildFilters(app) {
         c.classList.toggle('on');
         c.classList.contains('on') ? bd.filters[field].add(key) : bd.filters[field].delete(key);
         haptic(c);
-        bd.view === 'guess' ? startGuess(app) : renderGrid(app);
+        refreshCurrent(app);
       };
       ch.appendChild(c);
     });
@@ -117,7 +229,7 @@ function openSheet(c) {
        ${field('Industry', `${industryEmoji(c.gindustry)} ${nice(c.gindustry)}`)}
        ${field('Country', flagName(c.iso2))}
        ${field('Exchange', c.exchange || '—')}
-       ${field('Market cap (bucket)', `${capBucketShort(c.capAUD)}${c.capAUD != null ? ' · ' + fmtCap(c.capAUD) : ''}`)}
+       ${field('Market cap (bucket)', `${c.bucketShort}${c.capAUD != null ? ' · ' + fmtCap(c.capAUD) : ''}`)}
        ${field('GICS code', c.gics || '—')}
        ${field('Index', c.indexCode)}
        ${c.weight != null ? field('Benchmark weight', c.weight + '%') : ''}
@@ -141,10 +253,14 @@ function renderGuess(app) {
   if (!bd.queue.length) { wrap.innerHTML = '<div class="bd-empty">No stocks match those filters.</div>' + filterHint(); wireGuessFilters(app); return; }
   const c = bd.queue[bd.i];
   const [cv] = sectorOf(c.gsector);
+  // Mask identity in the blind-guess prompt; the reveal line below stays true.
+  const maskedDesc = c.desc
+    ? maskIdentity(c.desc, { name: c.name, legalName: c.legalName, country: c.country, iso2: c.iso2 })
+    : 'No description available.';
   wrap.innerHTML =
     `<div class="prompt slide-in">
        <div class="kicker"><span class="catico" style="background:var(${cv})"><span style="font-size:12px">${industryEmoji(c.gindustry)}</span></span>Guess the company · ${bd.i + 1}/${bd.queue.length}</div>
-       <div class="desc">${c.desc || 'No description available.'}</div>
+       <div class="desc">${maskedDesc}</div>
        <div class="reveal-id" id="bdRev"><div class="hidden-id">${flagOf(c.iso2)} ${c.name} · ${c.ticker}</div>
          <button class="rbtn press" onclick="document.getElementById('bdRev').classList.add('shown');this.remove()">Reveal</button></div>
      </div>
@@ -201,4 +317,46 @@ function guessNext(app) {
   const bd = state(app);
   bd.i = (bd.i + 1) % bd.queue.length;
   renderGuess(app);
+}
+
+// ------------------------------------------------- quiz-type generator (Wave 3)
+// Lets descriptions join a MIXED quiz as a self-graded flip card: show a masked
+// business description, flip to reveal the true identity. No MC distractors —
+// this type is inherently self-graded (min-distractor guard does not apply).
+
+/** Build desc items honouring the shared filter (region/iso2/gsector/gindustry). */
+export function buildItems(ctx, cfg = {}) {
+  const rows = filter(ctx.universe, {
+    region: cfg.region, iso2: cfg.iso2, gsector: cfg.gsector, gindustry: cfg.gindustry,
+  }).filter(s => s.name && s.symbol && s.desc);
+  return rows.map(s => ({ _type: 'desc', id: 'desc:' + s.qaid, data: s }));
+}
+
+/** Trim a long description to a card-friendly length at a word/sentence boundary. */
+function clipDesc(text, max = 460) {
+  if (!text || text.length <= max) return text;
+  const slice = text.slice(0, max);
+  const dot = slice.lastIndexOf('. ');
+  const cut = dot > max * 0.5 ? dot + 1 : slice.lastIndexOf(' ');
+  return (cut > 0 ? slice.slice(0, cut) : slice).trim() + ' …';
+}
+
+/** Self-graded flip card: masked description on the front, identity on the back. */
+export function makeQuestion(item, ctx) {  // eslint-disable-line no-unused-vars
+  const s = item.data;
+  return {
+    kicker: 'Guess the company',
+    sector: s.gsector,
+    question: 'What company is this?',
+    display: maskIdentity(clipDesc(s.desc), { name: s.name, legalName: s.legalName, country: s.country, iso2: s.iso2 }),
+    answer: s.name,
+    back: [
+      ['company', s.name],
+      ['ticker', s.symbol],
+      ['country', flagName(s.iso2)],
+      ['industry', nice(s.gindustry)],
+    ],
+    _selfGrade: true,
+    _type: 'desc',
+  };
 }

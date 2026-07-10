@@ -6,14 +6,17 @@
 import { $, el, haptic } from '../lib/dom.js';
 import { store } from '../state/store.js';
 import { sectorOf, icoSvg } from '../lib/icons.js';
-import { dice } from '../lib/fuzzy.js';
+import { dice, suggest } from '../lib/fuzzy.js';
 import { shuffle } from '../data/query.js';
+import { QUIZ_TYPE_STYLES } from '../modes/registry.js';
 import { makeQuestion as factsQ } from '../modes/facts.js';
 import { makeQuestion as idcardQ } from '../modes/idcard.js';
 import { makeQuestion as flashQ } from '../modes/flashcards.js';
+import { makeQuestion as descQ } from '../modes/descriptions.js';
 import { renderLeaderboard } from '../modes/leaderboard.js';
 
-const QFN = { facts: factsQ, idcard: idcardQ, flash: flashQ };
+// One quiz mixes types; dispatch the current item's question factory by `_type`.
+const QFN = { facts: factsQ, idcard: idcardQ, flash: flashQ, desc: descQ };
 const TIMER_SECS = 15;
 
 const STYLE_TAG = { mc: 'multiple choice', tf: 'true / false', type: 'type-in', flip: 'flashcard' };
@@ -26,7 +29,6 @@ export function renderQuestion(app) {
   $('#runRingLbl').textContent = i + 1;
   const circ = 107;
   $('#runRing').style.strokeDashoffset = circ - (circ * i / total);
-  $('#runTag').textContent = app.mode === 'leaderboard' ? 'leaderboard' : (STYLE_TAG[app.style] || 'quiz');
   $('#nextBtn').classList.remove('show');
   $('#postmark').classList.remove('show');
   $('#abPrev').classList.toggle('disabled', i === 0);
@@ -38,37 +40,53 @@ export function renderQuestion(app) {
 
   const P = $('#promptCard'), Z = $('#answerZone');
   Z.innerHTML = '';
-  delete Z._opts; delete Z._flip; delete Z._sg; delete Z._submit; delete Z._tf;
+  delete Z._opts; delete Z._flip; delete Z._sg; delete Z._submit; delete Z._tf; delete Z._leaderboard;
   P.classList.remove('slide-in'); void P.offsetWidth; P.classList.add('slide-in');
   store.markSeen(app.mode, item.id);
 
-  if (app.mode === 'leaderboard') return renderLeaderboard(app, item, P, Z);
+  // leaderboard owns its whole single-box mechanic (no answer style).
+  if (item._type === 'leaderboard') { $('#runTag').textContent = 'leaderboard'; return renderLeaderboard(app, item, P, Z); }
 
-  const q = QFN[app.mode](item, app.ctx);
+  const q = QFN[item._type](item, app.ctx);
   item._q = q;
+
+  // desc (and any _selfGrade question) is inherently a flip card; otherwise
+  // honour app.style when the type supports it, falling back to MC.
+  const styles = QUIZ_TYPE_STYLES[item._type] || [];
+  const selfGrade = item._type === 'desc' || q._selfGrade;
+  const st = selfGrade ? 'flip' : (styles.includes(app.style) ? app.style : 'mc');
+  $('#runTag').textContent = STYLE_TAG[st] || 'quiz';
+
   const [cv, ic] = sectorOf(q.sector);
   const head = `<div class="kicker"><span class="catico" style="background:var(${cv})">${icoSvg(ic)}</span>${q.kicker}</div>`;
-  const body = q.display
+  // self-graded (desc) cards carry their content in the flip card itself, so the
+  // prompt only shows the question — avoids a giant duplicate of the description.
+  const body = (q.display && !selfGrade)
     ? `<div class="desc" style="font-size:14px;margin-bottom:4px">${q.question}</div><div class="q big">${q.display}</div>`
-    : `<div class="q ${q.big ? 'big' : ''}">${q.question}</div>`;
+    : `<div class="q ${q.big && !selfGrade ? 'big' : ''}">${q.question}</div>`;
   const hint = q.hint ? `<div class="hintline">💡 ${q.hint}</div>` : '';
   P.innerHTML = head + body + hint;
 
-  if (app.style === 'mc') renderMC(app, q, Z, item);
-  else if (app.style === 'tf') renderTF(app, q, Z, item);
-  else if (app.style === 'type') renderType(app, q, Z, item);
-  else if (app.style === 'flip') renderFlip(app, q, Z, item);
+  if (selfGrade) renderFlip(app, q, Z, item);
+  else if (st === 'mc') renderMC(app, q, Z, item);
+  else if (st === 'tf') renderTF(app, q, Z, item);
+  else if (st === 'type') renderType(app, q, Z, item);
+  else renderFlip(app, q, Z, item);
 
   startTimer(app);
 }
 
 // ---------------------------------------------------------------- MULTIPLE CHOICE
 function renderMC(app, q, Z, item) {
-  const opts = app.opts.shuffle ? shuffle([q.answer, ...q.distractors]) : [q.answer, ...q.distractors];
+  // dynamic option count: 4 / 6 / 8. Slice distractors to mcCount-1 and add the
+  // answer. Degrades gracefully when fewer distractors exist (min 2 options).
+  const mc = app.opts.mcCount || 4;
+  const KEYS = 'ABCDEFGH'.split('');
+  const ds = (q.distractors || []).slice(0, mc - 1);
+  const opts = app.opts.shuffle ? shuffle([q.answer, ...ds]) : [q.answer, ...ds];
   const box = el('div', 'opts');
-  const keys = ['A', 'B', 'C', 'D'];
   opts.forEach((o, i) => {
-    const b = el('button', 'opt press', `<span class="key">${keys[i]}</span><span>${o}</span>`);
+    const b = el('button', 'opt press', `<span class="key">${KEYS[i]}</span><span>${o}</span>`);
     b.dataset.i = i;
     b.onclick = () => {
       if (box.dataset.done) return;
@@ -123,9 +141,14 @@ function renderType(app, q, Z, item) {
   inp.setAttribute('enterkeyhint', 'go'); inp.setAttribute('autocapitalize', 'off');
   const btn = el('button', 'check-btn press', 'Check');
   row.append(inp, btn);
+  const sugg = el('div', 'ta-suggest'); sugg.style.display = 'none';
   const grade = el('div', 'grade');
+
+  const clearSuggest = () => { sugg.innerHTML = ''; sugg.style.display = 'none'; };
+
   const submit = () => {
     if (inp.disabled) return;
+    clearSuggest();
     const sim = dice(inp.value, q.answer), pct = Math.round(sim * 100);
     inp.disabled = true; btn.style.opacity = 0.5;
     const ok = sim >= store.fuzzy;
@@ -140,9 +163,32 @@ function renderType(app, q, Z, item) {
        ${q.expl ? `<div class="expl">${q.expl}</div>` : ''}`;
     app.record(ok, item, btn);
   };
+
+  // Type-ahead dropdown for company-name answers. Suggestions come from the whole
+  // universe; grading is unchanged (dice vs threshold). Never hijacks typing.
+  if (q.typeahead) {
+    const renderSuggest = () => {
+      const val = inp.value.trim();
+      if (inp.disabled || val.length < 2) { clearSuggest(); return; }
+      const list = suggest(val, app.ctx.universe, { limit: 5 });
+      sugg.innerHTML = '';
+      if (!list.length) { sugg.style.display = 'none'; return; }
+      for (const s of list) {
+        const label = s.symbol ? `${s.label} <span class="sym">${s.symbol}</span>` : s.label;
+        const it = el('div', 'ta-suggest-item', label);
+        it.onmousedown = e => e.preventDefault();          // keep input focus through the click
+        it.onclick = () => { inp.value = s.label; clearSuggest(); inp.focus(); };
+        sugg.appendChild(it);
+      }
+      sugg.style.display = '';
+    };
+    inp.addEventListener('input', renderSuggest);
+    inp.addEventListener('blur', () => setTimeout(clearSuggest, 120));
+  }
+
   inp.addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); submit(); } });
   btn.onclick = submit;
-  wrap.append(row, grade);
+  wrap.append(row, sugg, grade);
   Z.appendChild(wrap);
   Z._submit = submit;
   setTimeout(() => inp.focus(), 120);
@@ -150,7 +196,8 @@ function renderType(app, q, Z, item) {
 
 // ---------------------------------------------------------------- FLASHCARD FLIP
 function renderFlip(app, q, Z, item) {
-  const wrap = el('div', 'flip-wrap');
+  const longFront = q._selfGrade || (q.display && q.display.length > 120);
+  const wrap = el('div', 'flip-wrap' + (longFront ? ' longfront' : ''));
   const back = (q.back || [['answer', q.answer]])
     .map(([l, v]) => `<div class="fc-back-item"><span class="lab">${l}</span><span class="val">${v}</span></div>`).join('');
   wrap.innerHTML =

@@ -8,23 +8,26 @@ import { loadReference, loadUniverse, getUniverse, getReference } from './data/l
 import { shuffle } from './data/query.js';
 import { initCountries } from './lib/fx.js';
 import { $, $$, toast, beep } from './lib/dom.js';
-import { MODES } from './modes/registry.js';
+import { MODES, QUIZ_TYPES, STYLE_HINT } from './modes/registry.js';
 import { renderQuestion, stopTimer } from './ui/runner.js';
 import { renderHome } from './ui/home.js';
 import { renderConfig, readConfig } from './ui/config.js';
 import { renderSummary } from './ui/summary.js';
 import { renderStats } from './ui/stats.js';
 import { renderSettings } from './ui/settings.js';
-import { openBrowser } from './modes/descriptions.js';
 
 import * as facts from './modes/facts.js';
 import * as idcard from './modes/idcard.js';
 import * as flash from './modes/flashcards.js';
 import * as leaderboard from './modes/leaderboard.js';
+import * as descriptions from './modes/descriptions.js';
 
+// One quiz mixes several TYPES. Each type's buildItems(ctx, cfg) reads the shared
+// filter keys plus its own sub-options and returns items tagged with `_type`.
 const BUILD = {
-  facts: facts.buildItems, idcard: idcard.buildItems,
-  flash: flash.buildItems, leaderboard: leaderboard.buildItems,
+  leaderboard: leaderboard.buildItems, facts: facts.buildItems,
+  idcard: idcard.buildItems, flash: flash.buildItems,
+  desc: descriptions.buildItems,
 };
 
 function buildCtx() {
@@ -42,9 +45,11 @@ function buildCtx() {
 }
 
 const app = {
-  mode: null, style: 'mc', len: 5,
-  opts: { unseen: false, shuffle: true, timed: false, revealEnd: false },
-  cfg: {},
+  mode: null, style: 'mc', len: 10,
+  types: [],                                              // selected quiz-type keys
+  filter: { region: '', iso2: '', gsector: '', gindustry: '' },   // '' = no constraint
+  opts: { unseen: false, shuffle: true, timed: false, revealEnd: false, mcCount: 4 },
+  cfg: {},                                                // per-type sub-opts
   ctx: null, queue: [], idx: 0, session: null, _qStart: 0, _timer: null,
 
   // ---------------- navigation ----------------
@@ -60,24 +65,74 @@ const app = {
   },
   openMode(m) {
     this.mode = m;
-    if (MODES[m].special === 'browser') { openBrowser(this); this.go('browser'); return; }
+    if (MODES[m].special === 'browser') { descriptions.openBrowser(this); this.go('browser'); return; }
     this.style = (MODES[m].styles || ['mc'])[0];
     this.cfg = {};
     renderConfig(this, m);
     this.go('config');
   },
 
+  // ---------------- unified config: types, filter, length, options ----------------
+  newQuiz() {
+    this.types = [];
+    this.cfg = {};
+    this.filter = { region: '', iso2: '', gsector: '', gindustry: '' };
+    renderConfig(this);
+    this.go('config');
+  },
+  startShuffle() {
+    this.types = QUIZ_TYPES.map(t => t.key);            // every quiz type
+    this.filter = { region: '', iso2: '', gsector: '', gindustry: '' };
+    this.cfg = {
+      ask: 'name',
+      topics: Object.keys(facts.FACT_TOPICS),
+      families: ['sector', 'region', 'industry', 'country'],
+      front: 'ticker',
+      back: ['name'],
+      typeahead: true,
+    };
+    renderConfig(this);
+    this.go('config');
+  },
+  openBrowse() {
+    this.go('browser');
+    descriptions.openBrowser(this);
+  },
+  toggleType(key) {
+    const i = this.types.indexOf(key);
+    if (i >= 0) this.types.splice(i, 1); else this.types.push(key);
+    renderConfig(this);                                  // show/hide sub-opts, toggle Start
+  },
+  setFilter(dim, val) {
+    if (!['region', 'iso2', 'gsector', 'gindustry'].includes(dim)) return;
+    this.filter[dim] = val || '';                        // '' = Any
+    renderConfig(this);
+  },
+  setLen(n) {
+    this.len = Math.max(3, Math.min(50, +n || 0));
+    const lv = document.querySelector('.len-val'); if (lv) lv.textContent = this.len;
+    const sl = document.querySelector('.len-slider input[type=range]');
+    if (sl && +sl.value !== this.len) sl.value = this.len;
+  },
+  setMcCount(n) {
+    this.opts.mcCount = +n;
+    document.querySelectorAll('.mc-seg button').forEach(b => b.classList.toggle('on', +b.dataset.n === +n));
+  },
+  browseView(v) {
+    (this._bd || (this._bd = {})).view = v;
+    if (typeof descriptions.browseView === 'function') descriptions.browseView(this, v);
+    else if (typeof descriptions.renderBrowse === 'function') descriptions.renderBrowse(this);
+    else descriptions.openBrowser(this);
+  },
+
   // ---------------- config controls ----------------
   setStyle(s) {
     this.style = s;
-    $$('#styleSeg button').forEach(b => b.classList.toggle('on', b.dataset.s === s));
-    const hint = { mc: 'Distractors auto-picked from the same category.',
-      tf: 'Half the statements are false — spot them.',
-      type: 'Fuzzy graded; a miss shows how close you were.',
-      flip: 'No input — flip and self-grade.' }[s] || '';
-    $('#styleHint').textContent = hint;
+    document.querySelectorAll('#styleSeg button, .style-seg button')
+      .forEach(b => b.classList.toggle('on', b.dataset.s === s));
+    const h = document.querySelector('#styleHint, .style-hint');
+    if (h) h.textContent = STYLE_HINT[s] || '';
   },
-  setLen(n) { this.len = n; $$('#lenSeg button').forEach(b => b.classList.toggle('on', +b.dataset.n === n)); },
   tgl(node) {
     const k = node.dataset.opt || node.dataset.set;
     node.classList.toggle('on');
@@ -88,15 +143,44 @@ const app = {
 
   // ---------------- quiz lifecycle ----------------
   async startQuiz() {
+    if (!this.types.length) { toast('Pick at least one question type'); return; }
     readConfig(this);
-    $('#boot')?.classList.remove('gone');   // (no-op if already gone)
     try { await loadUniverse(); } catch (e) { toast('Data failed to load'); return; }
-    this.ctx = buildCtx(); this.ctx.config = this.cfg;
-    let items = BUILD[this.mode](this.ctx, this.cfg) || [];
-    if (this.opts.shuffle) items = shuffle(items);
-    if (this.opts.unseen) items = items.filter(it => !store.isSeen(this.mode, it.id));
-    if (!items.length) { toast('No items — turn "unseen only" off'); return; }
+    this.ctx = buildCtx();
+    this.ctx.config = { ...this.filter, ...this.cfg };
+    // stats bucket: the single type when only one is picked, else 'mixed'.
+    this.mode = this.types.length === 1 ? this.types[0] : 'mixed';
+
+    // Build one shuffled pool PER selected type, so a "Shuffle · All" quiz gives
+    // every type fair representation instead of letting high-cardinality types
+    // (idcard/flash/desc generate thousands of items) crowd out small ones
+    // (leaderboard/facts). We then round-robin across the pools up to `len`.
+    const pools = [];
+    for (const t of this.types) {
+      const cfg = { ...this.filter, ...this.cfg };       // shared filter + sub-opts
+      let built;
+      if (t === 'facts') {
+        // facts reads a topics KEY list; fall back to every topic.
+        const topics = (cfg.topics && cfg.topics.length) ? cfg.topics : Object.keys(facts.FACT_TOPICS);
+        built = BUILD.facts(this.ctx, { ...cfg, topics });
+      } else {
+        built = BUILD[t](this.ctx, cfg);
+      }
+      let arr = (built || []).map(it => (it._type ? it : { ...it, _type: t }));
+      if (this.opts.unseen) arr = arr.filter(it => !store.isSeen(this.mode, it.id));
+      if (this.opts.shuffle) arr = shuffle(arr);
+      if (arr.length) pools.push(arr);
+    }
+
+    let items = [];
+    for (let k = 0; items.length < this.len && pools.some(p => p.length); k++) {
+      const p = pools[k % pools.length];
+      if (p.length) items.push(p.shift());
+    }
+    if (this.opts.shuffle) items = shuffle(items);        // randomise order, keep the balanced mix
     this.queue = items.slice(0, this.len);
+    if (!this.queue.length) { toast('No questions match — adjust filters or options'); return; }
+
     this.idx = 0;
     this.session = { results: [], c: 0, w: 0, streak: 0, best: 0, t0: Date.now(), times: [], review: false };
     store.touchDailyStreak();
@@ -247,11 +331,12 @@ document.addEventListener('keydown', e => {
   const Z = $('#answerZone');
   const done = $('#nextBtn').classList.contains('show');
 
-  // pre-answer style shortcuts
+  // pre-answer style shortcuts (supports up to 8 options: 1-8 / A-H)
   if (!done && Z._opts) {
-    const map = { '1': 0, '2': 1, '3': 2, '4': 3, a: 0, b: 1, c: 2, d: 3 };
-    const idx = map[e.key.toLowerCase()];
-    if (idx != null) { Z._opts.querySelectorAll('.opt')[idx]?.click(); return; }
+    const k = e.key.toLowerCase();
+    let idx = 'abcdefgh'.indexOf(k);
+    if (idx < 0 && /^[1-8]$/.test(k)) idx = +k - 1;
+    if (idx >= 0) { Z._opts.querySelectorAll('.opt')[idx]?.click(); return; }
   }
   if (!done && Z._flip && (e.key === ' ' || e.key === 'Enter')) { e.preventDefault(); Z._flip(); return; }
   if (!done && Z._sg && Z._sg.classList.contains('show')) {

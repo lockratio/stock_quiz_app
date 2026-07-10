@@ -65,8 +65,9 @@ for iso in ["AU","NZ","HK","SG","TW","KR","CN","IN","TH","MY","ID","PH"]:
     REGION[iso] = "AP"
 for iso in ["SA","BR","MX","ZA","PE","IL"]:
     REGION[iso] = "EE"
+for iso in ["CA"]: REGION[iso] = "CA"   # Canada is its own display region
 REGION_NAME = {"US": "United States", "JP": "Japan", "EU": "Europe",
-               "AP": "Asia-Pacific", "EE": "Emerging (ex-Asia)"}
+               "AP": "Asia-Pacific", "EE": "Emerging (ex-Asia)", "CA": "Canada"}
 
 # Clean display names for messy source country strings (applied everywhere).
 COUNTRY_DISPLAY = {
@@ -92,6 +93,32 @@ def pct(s: str):
 
 def norm(s: str) -> str:
     return re.sub(r"[^a-z0-9]+", " ", (s or "").lower()).strip()
+
+def parse_ticker(ticker: str):
+    """Split a Bloomberg ticker into (symbol, ticker_code, numeric_ticker, first_letter).
+
+    Handles both source formats:
+      'BHP AU'          -> ('BHP',  'AU', False, 'B')   ASX form (no Equity suffix)
+      '1929 HK Equity'  -> ('1929', 'HK', True,  '1')   ACWI numeric listing
+      'UCG IM Equity'   -> ('UCG',  'IM', False, 'U')   ACWI alpha listing
+      'ACWA AB EQUITY'  -> ('ACWA', 'AB', False, 'A')   'Equity' matched case-insensitively
+    """
+    toks = (ticker or "").split()
+    if toks and toks[-1].upper() == "EQUITY":
+        toks = toks[:-1]
+    if len(toks) >= 2:
+        code = toks[-1]
+        symbol = " ".join(toks[:-1])
+    else:
+        code = ""
+        symbol = toks[0] if toks else ""
+    numeric = symbol.isdigit()
+    fl = ""
+    for ch in symbol:
+        if ch.isalnum():
+            fl = ch.upper()
+            break
+    return symbol, code, numeric, fl
 
 def flag(iso2: str) -> str:
     """ISO-2 -> regional-indicator flag emoji."""
@@ -159,15 +186,22 @@ def build():
             if cur is None and cname:
                 fx_unmatched.add(cname)
             sec_num, sec_code = SECTOR_CODE.get(gsector, ("", ""))
+            ticker_raw = (r.get("bbg_ticker") or "").strip()
+            symbol, ticker_code, numeric_ticker, first_letter = parse_ticker(ticker_raw)
             rows.append({
                 "qaid": (r.get("QAID") or "").strip(),
                 "index_code": (r.get("IndexCode") or "").strip(),
-                "ticker": (r.get("bbg_ticker") or "").strip(),
+                "ticker": ticker_raw,
+                "symbol": symbol,
+                "ticker_code": ticker_code,
+                "numeric_ticker": numeric_ticker,
+                "first_letter": first_letter,
                 "name": (r.get("tr_name") or "").strip(),
                 "legal_name": (r.get("legal_name") or "").strip(),
                 "iso2": iso2,
                 "country": cname,
                 "region": REGION.get(iso2, ""),
+                "mag7": False,   # set below: top-7 by USD mktcap within MSCIACWI
                 "gsector": gsector or "",
                 "gindustry": gindustry or "",
                 "gics": gics_raw,
@@ -189,8 +223,22 @@ def build():
         print(f"WARNING: {len(dupes)} duplicate QAID(s) across stack (first few): "
               f"{list(dupes)[:5]}")
 
+    # -------------------------------------------------- mag7 flag
+    # Top-7 by USD market cap within the MSCIACWI index.
+    acwi = [r for r in rows if r["index_code"] == "MSCIACWI"]
+    mag7_rows = sorted(acwi, key=lambda x: (x["mktcap_usd_mln"] or 0), reverse=True)[:7]
+    for r in mag7_rows:
+        r["mag7"] = True
+
+    # -------------------------------------------------- region completeness
+    blank_regions = [r for r in rows if not r["region"]]
+    assert not blank_regions, (
+        f"{len(blank_regions)} rows with blank region; first iso2s: "
+        f"{sorted({r['iso2'] for r in blank_regions})[:10]}")
+
     # -------------------------------------------------- write universe.csv
-    cols = ["qaid","index_code","ticker","name","legal_name","iso2","country",
+    cols = ["qaid","index_code","ticker","symbol","ticker_code","numeric_ticker",
+            "first_letter","mag7","name","legal_name","iso2","country",
             "region","gsector","gindustry","gics","sector_num","sector_code",
             "exchange","currency","currency_iso","mktcap_aud_mln","mktcap_usd_mln",
             "bm_weight","desc"]
@@ -244,6 +292,7 @@ def build():
     top_by_country = {}
     for iso in countries:
         top_by_country[iso] = [light(r) for r in sort_cap([x for x in rows if x["iso2"] == iso])[:5]]
+    mag7_quickview = [light(r) for r in sort_cap([x for x in rows if x["mag7"]])]
 
     reference = {
         "meta": {
@@ -263,6 +312,7 @@ def build():
             "top_global": top_global,
             "top_by_sector": top_by_sector,
             "top_by_country": top_by_country,
+            "mag7": mag7_quickview,
         },
     }
     with open(OUT / "reference.json", "w", encoding="utf-8") as f:
@@ -277,6 +327,24 @@ def build():
     print(f"missing mktcap_aud={caps_missing}  missing gindustry={gi_missing}")
     if fx_unmatched:
         print(f"NO CURRENCY MATCH for: {sorted(fx_unmatched)}")
+
+    # -------------------------------------------------- Wave-1 verification
+    n_blank = sum(1 for r in rows if not r["region"])
+    n_mag7 = sum(1 for r in rows if r["mag7"])
+    n_numeric = sum(1 for r in rows if r["numeric_ticker"])
+    print(f"blank_regions={n_blank}  mag7_rows={n_mag7}  numeric_ticker={n_numeric}")
+    print("mag7 companies (cap-desc): " +
+          ", ".join(r["name"] for r in mag7_rows))
+    print("sample ticker transforms:")
+    seen_iso = set()
+    for want in ["US", "HK", "JP", "AU", "IT"]:
+        for r in rows:
+            if r["iso2"] == want and want not in seen_iso:
+                print(f"  {r['ticker']!r:24} -> {r['symbol']!s:8} | "
+                      f"{r['ticker_code']!s:4} | numeric={r['numeric_ticker']!s:5} | "
+                      f"first={r['first_letter']}")
+                seen_iso.add(want)
+                break
     print("done.")
 
 if __name__ == "__main__":
