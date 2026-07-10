@@ -2,3 +2,6 @@
 *.png
 __pycache__/
 .DS_Store
+
+# ...but the shipped brand/background assets must be committed (Pages needs them)
+!assets/**/*.png

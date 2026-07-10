@@ -29,8 +29,8 @@
 
 /* ---- clickable wordmark logo (index.html swaps in the wide PNG) ---------- */
 .brand { cursor: pointer; }
-.brand-logo { height: 100px; width: auto; display: block; }   /* force height so the wide PNG never warps the header */
-@media (min-width: 860px) { .brand-logo { height: 116px; } }
+.brand-logo { height: 80px; width: auto; display: block; }   /* force height so the wide PNG never warps the header (source is pre-cropped ±20%) */
+@media (min-width: 860px) { .brand-logo { height: 93px; } }
 
 /* ---- hexagon background --------------------------------------------------
    Uses assets/bg/hexagons.png (the .svg is a 2 MB base64-PNG wrapper — larger
